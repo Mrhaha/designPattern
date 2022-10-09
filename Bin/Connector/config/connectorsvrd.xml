@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<connectorsvrd log_level="11" check_socket_interval="10" sokcet_unalive_time="120" 
+               wait_firt_package_time="30" statistic_interval="90" 
+               socket_buffer="131072" max_fd="20480" session_key="a1thwboc249q6v7m" >
+               
+    <listen_port>843</listen_port>
+</connectorsvrd>

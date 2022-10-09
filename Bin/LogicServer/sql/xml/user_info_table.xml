@@ -1,0 +1,233 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="user_info_t" class_name="CRecordUserInfoTable" cache_name="TUserInfoTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_user_info_table">
+
+    <field_info desc="uid"              type="int"  field_name="uid" primary_key="true" div ="true" comment="玩家uid" />
+    <field_info desc="group_id"         type="int"  field_name="group_id" primary_key="true" comment="玩家区服" />
+	
+	<field_info desc="age"           	type="int" 	field_name="age" 	default="0"	comment="年龄" />
+    <field_info desc="vip_level"        type="char" field_name="vip_level" default="0" comment="VIP等级" />
+    <field_info desc="guide_major_step" type="char" field_name="guide_major_step" unsigned="true" default="1" comment="引导大步" />
+    <field_info desc="guide_minor_step" type="char" field_name="guide_minor_step" unsigned="true" default="0" comment="引导小步" />
+	<field_info desc="guide_special_step" type="uint64_t" field_name="guide_special_step" unsigned="true" default="0" comment="特殊引导" />
+	<field_info desc="primary_key_index"   type="int" field_name="primary_key_index" default="1" comment="玩家数据主键生成器" />
+	
+	<field_info desc="nick"             type="std::string" field_name="nick" size="32"comment="玩家昵称" />
+    <field_info desc="ban_type"         type="int"  field_name="ban_type" comment="封禁类型" />
+    <field_info desc="ban_begin_time"   type="int"  field_name="ban_begin_time" comment="封禁开始时间" />
+    <field_info desc="ban_end_time"     type="int"  field_name="ban_end_time" comment="封禁结束时间" />
+    <field_info desc="ban_comment"      type="std::string" field_name="ban_comment" size="255" comment="封禁理由" />
+	<field_info desc="jubao_count"      type="int"  field_name="jubao_count" comment="举报次数" />
+	<field_info desc="jubaoed_count"    type="int"  field_name="jubaoed_count" comment="被举报次数" />
+	
+	<field_info desc="guild_id"     type="int"  field_name="guild_id" comment="公会ID" />
+	<field_info desc="guild_name"   type="std::string"  field_name="guild_name" size="32" comment="公会名称"/>
+
+	<field_info desc="change_nick_count"         type="int"  field_name="change_nick_count" default="0" comment="改名次数" />
+    <field_info desc="avatar_id"                 type="int"  field_name="avatar_id" default="0" comment="头像ID" />
+    <field_info desc="avatar_border"             type="int"  field_name="avatar_border" default="0" comment="头像边框" />
+    <field_info desc="level"                     type="int"  field_name="level" default="1" comment="等级" />
+    <field_info desc="exp"                       type="int"  field_name="exp" comment="经验" />
+    <field_info desc="vip_exp"                   type="int"  field_name="vip_exp" comment="vip经验" />
+    <field_info desc="add_up_rmb"                type="int"  field_name="add_up_rmb" comment="玩家总充值" />
+	<field_info desc="month_add_up_rmb"                type="int"  field_name="month_add_up_rmb" comment="当月玩家总充值" />
+    <field_info desc="first_deposit_bonus"       type="int"  field_name="first_deposit_bonus" comment="首次充值奖励" />
+    <field_info desc="last_login"                type="int"  field_name="last_login" comment="上次登录时间" />
+    <field_info desc="last_logout"               type="int"  field_name="last_logout" comment="上次登出时间" />
+    <field_info desc="add_up_login_day"          type="int"  field_name="add_up_login_day" comment="登录天数" />
+    <field_info desc="create_time"               type="int"  field_name="create_time" comment="创建时间" />
+    <field_info desc="fight_level_id"            type="int"  field_name="fight_level_id" comment="战斗地图ID" />
+    <field_info desc="global_mail_time_pos"      type="int"  field_name="global_mail_time_pos" comment="全服邮件时间pos" />
+	<field_info desc="npc_mail_day"              type="int"  field_name="npc_mail_day" comment="npc邮件createday" />
+	<field_info desc="npc_mail_server"           type="int"  field_name="npc_mail_server" comment="npc邮件serverday" />
+	<field_info desc="npc_mail_datetime"         type="int"  field_name="npc_mail_datetime" comment="npc邮件datetime" />
+	<field_info desc="npc_mail_level"            type="int"  field_name="npc_mail_level" comment="npc邮件level" />
+	<field_info desc="npc_mail_cardtime"         type="int"  field_name="npc_mail_cardtime" comment="npc邮件福利卡时间" />
+    
+	<field_info desc="theme_skin" 				 type="int"  field_name="theme_skin" comment="主界面皮肤" />
+	<field_info desc="rune_card" 				 type="int"  field_name="rune_card" comment="装备符卡" />
+	
+	<field_info desc="last_sign_time" 			 type="int"  field_name="last_sign_time" comment="上次签到时间"/>
+	<field_info desc="total_sign" 			 	 type="int"  field_name="total_sign" comment="总签到次数"/>
+	
+    <field_info desc="active_double_deposit_count"     type="int"  field_name="active_double_deposit_count" comment="活动获得双倍充值次数" />
+    <field_info desc="refresh_double_deposit_time"     type="int"  field_name="refresh_double_deposit_time" comment="刷新双倍充值时间" />
+ 
+    <field_info desc="rmb"            type="int"  field_name="rmb" comment="元宝" />
+	<field_info desc="pay_rmb"        type="int"  field_name="pay_rmb" comment="付费元宝" />
+    <field_info desc="gold"           type="int"  field_name="gold" comment="金币" />
+    <field_info desc="evil_brand"     type="int"  field_name="evil_brand" comment="竞技币" />
+    <field_info desc="charm"          type="int"  field_name="charm" comment="魅力" />
+
+    <field_info desc="phy_power"            type="int"  field_name="phy_power" comment="体力" />
+	<field_info desc="phy_store"            type="int"  field_name="phy_store" comment="体力存储" />
+    <field_info desc="last_auto_add_time"   type="int"  field_name="last_auto_add_time" comment="上次自动加体力时间" />
+    <field_info desc="vitality"             type="int"  field_name="vitality" comment="活力" />
+    <field_info desc="add_vitality_time"    type="int"  field_name="add_vitality_time" comment="上次加活力时间" />
+
+	<field_info desc="last_merge_refresh_time"  type="int"  field_name="last_merge_refresh_time" comment="上一次合服刷新数据时间" />
+	
+    <field_info desc="role_combat"  type="int"  field_name="role_combat" comment="role_combat" />
+	<field_info desc="role_combat_max"  type="int"  field_name="role_combat_max" comment="role_combat_max" />
+
+    <field_info desc="daily_deposit" type="int" field_name="daily_deposit" comment="每日充值数" />
+    <field_info desc="daily_deposit_bonus" type="int" field_name="daily_deposit_bonus" comment="每日充值奖励" />
+    <field_info desc="last_deposit_time" type="int" field_name="last_deposit_time" comment="上次充值时间" />
+  
+    <field_info desc="score_rank_bonus_time"        type="int"  field_name="score_rank_bonus_time" comment="积分排行榜奖励时间" />
+    <field_info desc="combat_rank_bonus_time"       type="int"  field_name="combat_rank_bonus_time" comment="战斗排行榜奖励时间" />
+    <field_info desc="daily_task_change_time"       type="int"  field_name="daily_task_change_time" comment="每日任务更新时间" />
+
+	<field_info desc="fight_power_highest_rank"     type="int"  field_name="fight_power_highest_rank" comment="战力最高排行" />
+
+    <field_info desc="buy_gold_times"               type="int" field_name="buy_gold_times" comment="购买金币次数" />
+    <field_info desc="buy_gold_total_times"         type="int" field_name="buy_gold_total_times" comment="购买金币总次数" />
+    <field_info desc="buy_energy_times"             type="int" field_name="buy_energy_times" comment="购买体力次数" />
+    <field_info desc="last_buy_energy_time"         type="int" field_name="last_buy_energy_time" comment="上次购买体力时间" />
+    <field_info desc="buy_vitality_times"           type="int" field_name="buy_vitality_times" comment="购买活力次数" />
+    <field_info desc="last_buy_vitality_time"       type="int" field_name="last_buy_vitality_time" comment="上次购买活力时间" />
+
+	<field_info desc="total_online_time"            type="int" field_name="total_online_time" comment="总共在线时长" />
+    
+    <field_info desc="refresh_pvp_times"            type="int" field_name="refresh_pvp_times" comment="刷新竞技场次数" />
+    <field_info desc="last_refresh_pvp_time"        type="int" field_name="last_refresh_pvp_time" comment="上次刷新竞技场时间" />
+
+    <field_info desc="cross_fight_reset_time" type="int" field_name="cross_fight_reset_time" comment="过关斩将重置时间" />
+    <field_info desc="cross_fight_reset_times" type="int" field_name="cross_fight_reset_times" comment="过关斩将重置次数" />
+    <field_info desc="cross_fight_refresh_reset_times_times" type="int" field_name="cross_fight_refresh_reset_times_times" comment="刷新过关斩将重置次数的次数" />
+    <field_info desc="cross_fight_last_refresh_reset_times_time" type="int" field_name="cross_fight_last_refresh_reset_times_time" comment="上次刷新过关斩将重置次数的时间" />
+	
+    <field_info desc="pvp_highest_rank" type="int" field_name="pvp_highest_rank" comment="竞技场最高排行" />
+    <field_info desc="pvp_fight_times" type="int" field_name="pvp_fight_times" comment="竞技场战斗次数" />
+    <field_info desc="pvp_victory_times" type="int" field_name="pvp_victory_times" comment="竞技场胜利次数" />
+
+    <field_info desc="match_score" type="int" field_name="match_score" comment="匹配积分" />
+	<field_info desc="match_max_score" type="int" field_name="match_max_score" comment="最大积分" />    
+	<field_info desc="match_win_count" type="int" field_name="match_win_count" comment="匹配胜利次数" />    
+	<field_info desc="match_lose_count" type="int" field_name="match_lose_count" comment="匹配失败次数" />    
+    <field_info desc="match_max_level_award_bitmap"  type="std::string" field_name="match_max_level_award_bitmap" size="255" comment="最大段位奖励状态" />
+    <field_info desc="match_daily_count" type="int" field_name="match_daily_count" comment="今日匹配次数" />    
+    <field_info desc="match_store_buy_count"  type="userdata"  field_name="match_store_buy_count" class="CPackMatchStoreBuyCount" size="255" comment="匹配商店已购买次数" />
+	
+	<field_info desc="fair_pvp_win_count"          type="int"  field_name="fair_pvp_win_count"     comment="公平竞技胜利次数" />
+	<field_info desc="fair_pvp_lose_count"         type="int"  field_name="fair_pvp_lose_count"     comment="公平竞技失败次数" />
+	<field_info desc="fair_pvp_store_card"         type="userdata"  field_name="fair_pvp_store_card" class="std::vector<int32_t>" size="255" comment="公平竞技商店卡牌" />
+    <field_info desc="fair_pvp_team_card"          type="userdata"  field_name="fair_pvp_team_card" class="std::vector<int32_t>" size="64" comment="公平竞技队伍" />
+	
+    <field_info desc="normal_chapter_bonus1" type="uint64_t" field_name="normal_chapter_bonus1" unsigned="true" comment="普通章节奖励1" />
+    <field_info desc="normal_chapter_bonus2" type="uint64_t" field_name="normal_chapter_bonus2" unsigned="true" comment="普通章节奖励2" />
+    <field_info desc="normal_chapter_bonus3" type="uint64_t" field_name="normal_chapter_bonus3" unsigned="true" comment="普通章节奖励3" />
+    <field_info desc="elite_chapter_bonus1"  type="uint64_t" field_name="elite_chapter_bonus1" unsigned="true" comment="精英章节奖励1" />
+	<field_info desc="elite_chapter_bonus2"  type="uint64_t" field_name="elite_chapter_bonus2" unsigned="true" comment="精英章节奖励2" />
+	<field_info desc="elite_chapter_bonus3"  type="uint64_t" field_name="elite_chapter_bonus3" unsigned="true" comment="精英章节奖励3" />
+
+    <field_info desc="vip_level_buy_bonus"  type="uint64_t" field_name="vip_level_buy_bonus" unsigned="true" comment="vip等级购买奖励" />
+	<field_info desc="recommended_lineup_bitmap"  type="uint64_t" field_name="recommended_lineup_bitmap" unsigned="true" comment="推荐阵容bitmap" />
+    <field_info desc="fight_power_rank_active"  type="uint64_t" field_name="fight_power_rank_active" unsigned="true" comment="战斗力排行榜" />
+	
+	<field_info desc="climb_tower_current_order" type="int" field_name="climb_tower_current_order" comment="爬塔当前层数" />
+	<field_info desc="climb_tower_max_order" type="int" field_name="climb_tower_max_order" comment="爬塔最高层数" />
+	<field_info desc="climb_tower_reset_count" type="int" field_name="climb_tower_reset_count" comment="爬塔重置次数" />
+	<field_info desc="last_climb_tower_reset_time" type="int" field_name="last_climb_tower_reset_time" comment="爬塔上次重置时间" />
+	<field_info desc="climb_tower_sweep_end_time" type="int" field_name="climb_tower_sweep_end_time" comment="爬塔扫荡结束时间" />
+	<field_info desc="climb_tower_highest_rank" type="int" field_name="climb_tower_highest_rank" comment="爬塔最高排名" />
+	
+	<field_info desc="serial_pay_awarded" type="int" field_name="serial_pay_awarded" comment="连续充值奖励" />
+	<field_info desc="cornucopia_profit_yuanbao" type="int" field_name="cornucopia_profit_yuanbao" comment="招财猫获利元宝" />
+	
+	<field_info desc="guild_coin" type="int" field_name="guild_coin" comment="公会币" />
+	<field_info desc="last_leave_guild_time"  type="int"  field_name="last_leave_guild_time" comment="离开公会时间" />
+	
+	<field_info desc="jubao_award_count"  type="int"  field_name="jubao_award_count" comment="举报获奖次数" />
+	<field_info desc="today_jubao_award_count"  type="int"  field_name="today_jubao_award_count" comment="今日举报获奖次数" />	
+	<field_info desc="last_jubao_award_time"  type="int"  field_name="last_jubao_award_time" comment="上次举报获奖时间" />
+	
+	<field_info desc="wei_buy_num"  type="int"  field_name="wei_buy_num" comment="魏国金券购买数量" />
+	<field_info desc="wei_avg_price"  type="int"  field_name="wei_avg_price" comment="魏国金券买入均价" />
+	<field_info desc="shu_buy_num"  type="int"  field_name="shu_buy_num" comment="蜀国金券购买数量" />
+	<field_info desc="shu_avg_price"  type="int"  field_name="shu_avg_price" comment="蜀国金券买入均价" />
+	<field_info desc="wu_buy_num"  type="int"  field_name="wu_buy_num" comment="吴国金券购买数量" />
+	<field_info desc="wu_avg_price"  type="int"  field_name="wu_avg_price" comment="吴国金券买入均价" />
+	
+	<field_info desc="entire_war_contribution"  type="int"  field_name="entire_war_contribution" comment="战役功勋" />
+	<field_info desc="entire_war_militark_level"  type="int"  field_name="entire_war_militark_level" comment="战役军衔等级" />
+	<field_info desc="entire_war_worshipped_count"  type="int"  field_name="entire_war_worshipped_count" comment="战役被膜拜次数" />
+	<field_info desc="last_entire_war_time"  type="int"  field_name="last_entire_war_time" comment="上次全民战役时间" />	
+	<field_info desc="week_war_contribution"  type="int"  field_name="week_war_contribution" comment="每周战役功勋" />
+	<field_info desc="week_limit_boss_score"  type="int"  field_name="week_limit_boss_score" comment="每周限时BOSS积分" />
+	<field_info desc="action_coin"  type="int"  field_name="action_coin" comment="行动力" />
+	<field_info desc="last_add_action_time"  type="int"  field_name="last_add_action_time" comment="上次增加行动力时间" />
+	<field_info desc="entire_war_award_bitmap" type="uint64_t"  field_name="entire_war_award_bitmap" unsigned="true" default="0" comment="全民战役奖励状态" />
+	<field_info desc="entire_war_node_award_stat" type="userdata" field_name="entire_war_node_award_stat" class="CVecBitmap" size="100" comment="全民战役节点奖励领取状态"/>
+	<field_info desc="entire_war_extra_status" type="userdata"  field_name="entire_war_extra_status" class="CPackEntireWarExtra" size="1024" comment="全民战役地图额外状态" />
+	<field_info desc="entire_war_node_para" type="userdata"  field_name="entire_war_node_para" class="std::map<int32_t, int32_t>" size="512" comment="全民战役地图节点参数" />
+	
+	<field_info desc="day_qiyu_id"  type="int"  field_name="day_qiyu_id" comment="每日奇遇id" />
+	<field_info desc="cangbaotu_qiyu_id"  type="int"  field_name="cangbaotu_qiyu_id" comment="藏宝图奇遇id" />	
+	<field_info desc="qiyu_endtime"  type="int"  field_name="qiyu_endtime" comment="当前奇遇结束时间" />
+	<field_info desc="cangbaotu_endtime"  type="int"  field_name="cangbaotu_endtime" comment="当前藏宝图结束时间" />
+	<field_info desc="qiyu_buff"    type="userdata"  field_name="qiyu_buff" class="CPackEntireWarBuffVector" size="256" comment="奇遇buff" />
+	<field_info desc="cangbaotu_buff"    type="userdata"  field_name="cangbaotu_buff" class="CPackEntireWarBuffVector" size="256" comment="藏宝图buff" />
+	<field_info desc="cangbaotu_suipian"    type="userdata"  field_name="cangbaotu_suipian" class="CPackCangbaotuSuipian" size="256" comment="藏宝图碎片信息" />
+
+	<field_info desc="banquet_all_team_id"  type="userdata"  field_name="banquet_all_team_id" class="CPackBanquetTeamIds" size="128" comment="参加宴会队伍ID"/>
+
+	<field_info desc="data_update_version"  type="int"  field_name="data_update_version" default="0" comment="版本数据更新标记" />
+	
+	<field_info desc="new_pass_total_exp"    type="int"  field_name="new_pass_total_exp" default="0" comment="通行证经验" />
+	<field_info desc="new_pass_normal_level"    type="userdata"  field_name="new_pass_normal_level" class="std::vector<int32_t>" size="256" comment="通行证已领取的普通奖励等级" />
+	<field_info desc="new_pass_advanced_level"    type="userdata"  field_name="new_pass_advanced_level" class="std::vector<int32_t>" size="256" comment="通行证已领取的高级奖励等级" />
+	
+	<field_info desc="limit_boss_total_point"    type="int"  field_name="limit_boss_total_point" default="0" comment="累计限时boss活动积分" />
+	
+	<field_info desc="find_limit_boss"    type="userdata"  field_name="find_limit_boss" class="std::map<int32_t,int32_t>" size="255" comment="发现过的限时Boss关卡" />
+	
+	<field_info desc="pvp_score" type="int" field_name="pvp_score" default = "1200" comment="道馆积分" />
+	<field_info desc="pvp_highest_score" type="int" field_name="pvp_highest_score" default = "0" comment="道馆最高积分" />
+
+	<field_info desc="pvp_refresh_count" type="int" field_name="pvp_refresh_count" comment="道馆刷新次数" />
+	<field_info desc="pvp_weekly_task"    type="userdata"  field_name="pvp_weekly_task" class="std::vector<int32_t>" size="256" comment="道馆每周任务ID"/>
+	
+	<field_info desc="home_exp" type="int" field_name="home_exp" default = "0" comment="家园经验" />
+	<field_info desc="home_exp_reward"    type="userdata"  field_name="home_exp_reward" class="std::vector<int32_t>" size="256" comment="家园经验已领取的奖励等级" />
+	
+	<field_info desc="month_age_limit" type="char" field_name="month_age_limit" comment="每月充值年龄限制序号" />
+	<field_info desc="last_month_age_change" type="int" field_name="last_month_age_change" comment="上次修改充值年龄段时间" />
+	<field_info desc="last_limit_commodity_id" type="int" field_name="last_limit_commodity_id" comment="上次抽的限时卡池id" />
+
+	<field_info desc="hot_spring_reward_email"    type="char"  field_name="hot_spring_reward_email" default="0" comment="温泉邮件奖励" />
+	<field_info desc="hot_spring_reward_other"    type="char"  field_name="hot_spring_reward_other" default="0" comment="温泉他人奖励" />
+	<field_info desc="hot_spring_reward"    type="char"  field_name="hot_spring_reward" default="0" comment="温泉奖励" />
+	<field_info desc="hot_spring_invite"    type="char"  field_name="hot_spring_invite" default="0" comment="温泉邀请标记" />
+	<field_info desc="hot_spring_join"    type="char"  field_name="hot_spring_join" default="0" comment="温泉参与标记" />
+	
+	
+	<field_info desc="is_bind_email"    type="char"  field_name="is_bind_email" default="0" comment="是否绑定邮箱" />
+	<field_info desc="daily_guild_donate"    type="char"  field_name="daily_guild_donate" default="0" comment="今日是否公会捐献" />
+	<field_info desc="guild_person_donate" type="int" field_name="guild_person_donate" default = "0" comment="个人公会捐献度" />
+	<field_info desc="guild_extra_level"   type="int"  field_name="guild_extra_level" comment="公会boss额外参数" />
+
+	<field_info desc="daily_sign_flag"    type="char"  field_name="daily_sign_flag" default="0" comment="今日签到占卜标记" />
+	<field_info desc="daily_sign_reward" type="userdata" field_name="daily_sign_reward" class="CPackGameItem" size="128" comment="签到奖励信息"/> 
+	<field_info desc="complete_sign_reward" type="userdata" field_name="complete_sign_reward" class="CPackGameItem" size="128" comment="全图鉴签到奖励信息"/> 
+	
+	<field_info desc="zhuhai_score" type="int" field_name="zhuhai_score" default = "0" comment="竹海积分" />
+
+	
+	
+	
+
+
+	
+</table_info>

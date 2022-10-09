@@ -1,0 +1,1 @@
+<global_info host="MYSQL_HOST" port="MYSQL_PORT" user="MYSQL_USER" passwd="MYSQL_PASSWORD" database="MYSQL_NAME" div_num="32" storage_instance="LOGIC_RECORD_CACHE_INS" />

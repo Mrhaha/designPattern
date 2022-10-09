@@ -1,0 +1,1 @@
+<global_info host="127.0.0.1" port="3306" user="root" passwd="" database="three_kingdom_run_db" div_num="32" storage_instance="LOGIC_RECORD_CACHE_INS" />

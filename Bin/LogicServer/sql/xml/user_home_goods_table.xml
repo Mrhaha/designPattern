@@ -1,0 +1,27 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="user_home_goods_t" class_name="CRecordUserHomeGoodsTable" cache_name="TUserHomeGoodsTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_user_home_goods_table">
+
+    <field_info desc="uid" 		type="int"  field_name="uid" 		primary_key="true" div ="true" comment="玩家uid" />	
+    <field_info desc="group_id" type="int"  field_name="group_id" 	primary_key="true" comment="玩家区服" />
+    <field_info desc="home_id" 	type="int"  field_name="home_id" 	primary_key="true" comment="房间ID" />
+    <field_info desc="goods_index" 	type="int"  field_name="goods_index" 		primary_key="true" comment="家具索引" />
+	
+    <field_info desc="goods_id" type="int"  field_name="goods_id" 	default="0" comment="家具道具ID" />
+	<field_info desc="pos_x" 	type="int"  field_name="pos_x" 		default="0" comment="X坐标" />
+	<field_info desc="pos_y" 	type="int"  field_name="pos_y" 		default="0" comment="Y坐标" />
+	<field_info desc="stat" 	type="char"  field_name="stat" 		default="0" comment="状态" />
+	<field_info desc="quadrant" type="char" field_name="quadrant" 	default="0" comment="所在象限" />
+	<field_info desc="seat_index" type="int" field_name="seat_index" 	default="0" comment="座椅序号" />
+</table_info>

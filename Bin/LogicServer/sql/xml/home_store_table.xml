@@ -1,0 +1,29 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+global              表示数据是全局数据, 不是用户数据, 在 select 的时候有差异
+
+-->
+
+<table_info table_name="home_store_t" class_name="CRecordHomeStoreTable" cache_name="THomeStoreTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_home_store_table">
+
+	<field_info desc="uid"          type="int"  field_name="uid" primary_key="true" div ="true" comment="玩家uid" />	
+    <field_info desc="group_id"     type="int"  field_name="group_id" primary_key="true" comment="玩家区服" />
+	<field_info desc="store_id"     type="int"  field_name="store_id" primary_key="true" comment="摊位ID"/>
+    
+	<field_info desc="store_open"   type="int"  field_name="store_open" default="0" comment="家园商店开启状态"/>
+    <field_info desc="sell_item_type"   type="int"  field_name="sell_item_type" default="0" comment="售出道具类型"/>
+	<field_info desc="sell_item_id"   type="int"  field_name="sell_item_id" default="0" comment="售出道具id"/>
+	<field_info desc="sell_item_num"   type="int"  field_name="sell_item_num" default="0" comment="售出道具数量"/>
+	<field_info desc="buy_item_type"   type="int"  field_name="buy_item_type" default="0" comment="买入道具类型"/>
+	<field_info desc="buy_item_id"   type="int"  field_name="buy_item_id" default="0" comment="买入道具id"/>
+	<field_info desc="buy_item_num"   type="int"  field_name="buy_item_num" default="0" comment="买入道具数量"/>
+</table_info>

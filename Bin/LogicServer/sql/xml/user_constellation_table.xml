@@ -1,0 +1,33 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="user_constellation_t" class_name="CRecordUserConstellationTable" cache_name="TUserConstellationTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_user_constellation_table">
+
+    <field_info desc="uid"                  type="int" field_name="uid" primary_key="true" div ="true" comment="玩家uid"/>
+    <field_info desc="group_id"             type="int" field_name="group_id" primary_key="true" comment="玩家区服"/>
+    <field_info desc="unique_id"    		type="int" field_name="unique_id" primary_key="true" comment="唯一id"/>
+	
+    <field_info desc="grade"            	type="int" field_name="grade" 			comment="品质"/>
+    <field_info desc="equipment_tag"      	type="int" field_name="equipment_tag" 	comment="装备位"/>
+	<field_info desc="suit"       			type="int" field_name="suit" 			comment="套装"/>
+	<field_info desc="level"       			type="int" field_name="level" 			comment="等级"/>
+	<field_info desc="exp"       			type="int" field_name="exp" 			comment="当前经验"/>
+	<field_info desc="total_exp"       		type="int" field_name="total_exp" 		comment="总经验"/>
+	
+	<field_info desc="equip_card_id"       	type="int" field_name="equip_card_id" 	comment="装备上的伙伴ID"/>
+	<field_info desc="is_locked"       		type="char" field_name="is_locked" 		comment="是否已上锁"/>
+	<field_info desc="is_discard"       	type="char" field_name="is_discard" 	comment="是否已弃置"/>
+	
+    <field_info desc="main_attr_type"       type="int" field_name="main_attr_type" comment="主属性类型"/>
+	<field_info desc="ex_attr"     	type="userdata"  field_name="ex_attr" class="std::map<int, std::pair<int, int>>" size="256" comment="副属性"/>
+</table_info>

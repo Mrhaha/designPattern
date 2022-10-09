@@ -1,0 +1,49 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+global              表示数据是全局数据, 不是用户数据, 在 select 的时候有差异
+
+-->
+
+<table_info table_name="guild_info_t" class_name="CRecordGuildInfoTable" cache_name="TGuildInfoTable"
+    div_num ="0" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="cross_record_guild_info_table">
+
+    <field_info desc="guild_id"     type="int"  field_name="guild_id" primary_key="true" where="true" comment="公会ID"/>
+    
+	<field_info desc="guild_name"   type="std::string"  field_name="guild_name" unique="true" size="32" comment="公会名称"/>
+    <field_info desc="guild_exp"    type="int"  field_name="guild_exp" comment="公会经验" />
+	<field_info desc="chief_uid"    type="int"  field_name="chief_uid" comment="公会长uid"/>
+    <field_info desc="chief_group"  type="int"  field_name="chief_group" comment="公会长区服" />
+    <field_info desc="bulletin"     type="std::string"  field_name="bulletin" size="512" comment="公告" />
+	<field_info desc="guild_boss_total_hurt"     type="uint64_t"  field_name="guild_boss_total_hurt" unsigned="true" comment="公会BOSS总伤害"/>
+	<field_info desc="last_refresh_time"  	type="int"  field_name="last_refresh_time" comment="上次刷新时间" />
+	
+	<field_info desc="change_name_cd"   	type="int"  field_name="change_name_cd" default="0" comment="改名CD"/>
+	<field_info desc="change_name_free" 	type="char"  field_name="change_name_free" default="0" comment="下次是否可免费改名"/>
+	
+    <field_info desc="guild_donate"    type="int"  field_name="guild_donate" comment="公会捐献度" />
+    <field_info desc="guild_sign_reward_level"    type="int"  field_name="guild_sign_reward_level" default="1" comment="签到奖励等级" />
+	
+	
+	<field_info desc="guild_unlock_item"    type="userdata"  class="std::vector<int>"  field_name="guild_unlock_item" size="128" comment="解锁的物品id" />
+    <field_info desc="guild_unlock_decorate"  type="userdata"   class="std::vector<int>"  field_name="guild_unlock_decorate" size="128" comment="解锁的装扮id" />
+	
+    <field_info desc="guild_footCloth"    type="userdata"   class="std::map<int,std::map<int,std::map<int,char>>>"  field_name="guild_footCloth"  size="1024" comment="地毯装饰" />
+    <field_info desc="guild_decorate"    type="userdata"   class="std::map<int,CPackGuildHomeInfo>"  field_name="guild_decorate"  size="2048" comment="公会装饰" />
+    <field_info desc="guild_war_boss_info"    type="userdata"   class="std::map<int,CPackGuildWarBossInfo>"  field_name="guild_war_boss_info"  size="2048" comment="公会战boss信息" />
+    <field_info desc="guild_war_record"    type="userdata"   class="std::vector<CPackGuildWarRecord>	"  field_name="guild_war_record"  size="2048" comment="公会战历史记录" />
+    <field_info desc="guild_war_score"    type="uint64_t"  field_name="guild_war_score" comment="公会战积分" />
+	<field_info desc="guild_war_end"   	type="int"  field_name="guild_war_end" default="0" comment="公会战结束时间"/>
+	
+
+	
+	
+    
+</table_info>

@@ -1,0 +1,34 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="level_info_t" class_name="CRecordLevelInfoTable" cache_name="TLevelInfoTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_level_info_table">
+
+    <field_info desc="uid"                  type="int"  field_name="uid" primary_key="true" div ="true"  comment="玩家uid" />	
+    <field_info desc="group_id"             type="int"  field_name="group_id" primary_key="true"  comment="玩家区服" />
+    <field_info desc="level_id"             type="int"  field_name="level_id" primary_key="true"  comment="地图id" />
+                                      
+    <field_info desc="level_star"           type="char" field_name="level_star" comment="星级标记"/>
+	<field_info desc="shared_times"         type="int" field_name="shared_times" comment="共享副本次数" />
+    <field_info desc="play_times"           type="int" field_name="play_times" comment="id" />
+    <field_info desc="last_play_time"       type="int"  field_name="last_play_time" comment="上次挑战时间" />
+    <field_info desc="reset_times"          type="int"  field_name="reset_times" comment="充值次数" />
+    <field_info desc="last_reset_time"      type="int"  field_name="last_reset_time" comment="上次重置时间" />
+    <field_info desc="total_victory_times"  type="int"  field_name="total_victory_times" comment="总共通关次数" />
+	<field_info desc="cost_time"  			type="int"  field_name="cost_time" comment="最快通关时间" />
+	
+	<field_info desc="achieve_tag"          type="char" field_name="achieve_tag" comment="成就完成标记"/>
+	<field_info desc="bonus_tag"          	type="char" field_name="bonus_tag" comment="奖励标记" />
+	
+	<field_info desc="adv_reward_times"     type="int"  field_name="adv_reward_times" comment="高额奖励次数" />
+
+</table_info>

@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{d47a5619-edd0-4ea4-865b-91fdd2252426}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>LogicServer</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{2238F9CD-F817-4ECC-BD14-2524D2669B35}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <ItemGroup>
+    <Text Include="..\..\server\logic_server\config\CMakeLists.txt" />
+    <Text Include="..\..\server\logic_server\game\CMakeLists.txt" />
+    <Text Include="..\..\server\logic_server\link\CMakeLists.txt" />
+    <Text Include="..\..\server\logic_server\record\CMakeLists.txt" />
+    <Text Include="..\..\server\logic_server\service\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\server\logic_server\config\logic_config.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_active.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_award.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_card.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_cross.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_entire_war.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_equip.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_fight.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_game.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_game_item.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_grow.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_guild.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_home.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_ibusy.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_item_monitor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_protocol_monitor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_qiyu.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_store.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_theme_activity_charge.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_util.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_xunchong.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_config_xuyuanqingdian.cpp" />
+    <ClCompile Include="..\..\server\logic_server\config\logic_conifg_score_level.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logicso_game_api.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_active.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_active_extra_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_active_info.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_active_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_admin_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_attribute_calc.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_award_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_bill.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_black_market_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_buy_commodity_operation_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_buy_resource_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_cache_card_operation.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_cache_common.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_cache_level_operation.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_card_operation_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_cmd_processor_factory.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_condition_check.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_create_role_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_cross_fight_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_cross_fight_store_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_cross_guild_war_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_cross_server_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_cross_team_war_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_currency_check.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_daily_task_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_daily_task_system.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_data_recovery.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_day_refresh_system.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_entire_war_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_equipment_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_error_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_formula_calc.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_friend.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_friend_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_global.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_global_fight.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_global_frame.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_grocery_store_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_guild.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_guild_cache.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_guild_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_home_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_hufu_store_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_ibusy_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_item.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_item_base.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_item_factory.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_item_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_jiban_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_level_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_main_scene_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_monitor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_multi_step_task.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_multi_step_task_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_processor_base.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_publisher.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_pvp_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_qiyu_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_rank_list.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_rank_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_reconnect_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_score_level_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_tactics_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_talk_common.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_talk_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_theme_activity_charge_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_user.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_user_mail_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_user_notify_system.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_user_stat.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_user_stat_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_wushen_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\game\logic_game_xuyuanqingdian_processor.cpp" />
+    <ClCompile Include="..\..\server\logic_server\link\logicso_link.cpp" />
+    <ClCompile Include="..\..\server\logic_server\link\logic_link_common.cpp" />
+    <ClCompile Include="..\..\server\logic_server\link\logic_link_error.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_activity_task_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_amulet_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_avatar_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_cross_fight_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_daily_task_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_day_single_recharge_task_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_fashion_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_fight_report_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_first_recharge_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_flower_lantern_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_friend_apply_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_friend_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_functional_item_attr_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_functional_item_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_basic_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_charm_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_countdown_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_entire_extra_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_entire_map_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_entire_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_guild_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_home_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_ibusy_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_last_pvp_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_mail_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_match_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_military_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_power_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_pvp_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_territory_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_tower_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_global_unlimit_rank_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_guild_apply_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_guild_chief_insert.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_guild_copy_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_guild_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_guild_member_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_hero_card_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_home_create_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_home_explore_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_home_furniture_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_home_garden_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_home_store_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_home_visit_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_item_monitor_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_level_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_merge_activity_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_muti_step_task_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_pet_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_proto_monitor_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_pvp_territory_store_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_score_level_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_server_nick_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_sql_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_sql_table_cache.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_swap_market_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_tactics_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_time_treasure_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_active_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_black_market_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_buy_back_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_buy_commodity_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_cross_fight_store_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_daily_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_deposit_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_event_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_grocery_store_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_guild_skill_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_guild_store_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_guild_task_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_honor_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_hufu_store_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_ibusy_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_ibusy_market_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_mail_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_pvp_store_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_qiyu_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_role_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_silk_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_stat_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_team_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_theme_activity_charge_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_uin_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_user_xuyuanqingdian_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\record\logic_record_wushen_info_table.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service_admin_container.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service_api.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service_connector_receiver.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service_connector_sender.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service_main.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service_mysql_handle.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service_mysql_writer_thread.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service_statistics.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service_tcpconnection.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service_text_checker.cpp" />
+    <ClCompile Include="..\..\server\logic_server\service\logic_service_zookeeper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\server\logic_server\config\logic_config.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_active.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_award.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_base.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_card.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_cross.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_define.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_entire_war.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_equip.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_fight.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_game.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_game_item.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_grow.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_guild.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_home.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_ibusy.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_item_monitor.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_protocol_monitor.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_qiyu.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_store.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_theme_activity_charge.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_util.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_xunchong.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_config_xuyuanqingdian.h" />
+    <ClInclude Include="..\..\server\logic_server\config\logic_conifg_score_level.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_active.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_active_extra_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_active_info.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_active_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_admin_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_attribute_calc.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_award_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_bill.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_black_market_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_buy_commodity_operation_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_buy_resource_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_cache_card_operation.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_cache_common.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_cache_level_operation.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_cache_table.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_card_operation_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_cmd_processor_factory.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_condition_check.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_create_role_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_cross_fight_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_cross_fight_store_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_cross_guild_war_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_cross_server_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_cross_team_war_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_currency_check.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_daily_task_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_daily_task_system.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_data_recovery.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_day_refresh_system.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_entire_war_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_equipment_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_error_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_formula_calc.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_friend.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_friend_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_global.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_global_cache.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_global_frame.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_grocery_store_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_guild.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_guild_cache.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_guild_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_home_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_hufu_store_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_ibusy_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_item.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_item_base.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_item_creator.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_item_factory.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_item_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_jiban_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_level_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_lru_hashmap.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_main_scene_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_monitor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_multi_step_task.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_multi_step_task_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_processor_base.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_publisher.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_pvp_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_qiyu_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_rank_list.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_rank_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_reconnect_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_score_level_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_tactics_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_talk_common.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_talk_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_theme_activity_charge_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_user.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_user_mail_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_user_notify_system.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_user_stat.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_user_stat_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_wushen_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\game\logic_game_xuyuanqingdian_processor.h" />
+    <ClInclude Include="..\..\server\logic_server\link\logic_link_common.h" />
+    <ClInclude Include="..\..\server\logic_server\link\logic_link_define.h" />
+    <ClInclude Include="..\..\server\logic_server\link\logic_link_error.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_activity_task_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_amulet_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_avatar_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_cross_fight_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_daily_task_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_day_single_recharge_task_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_fashion_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_fight_report_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_first_recharge_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_flower_lantern_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_friend_apply_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_friend_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_functional_item_attr_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_functional_item_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_basic_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_charm_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_countdown_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_entire_extra_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_entire_map_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_entire_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_guild_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_home_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_ibusy_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_last_pvp_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_mail_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_match_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_military_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_power_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_pvp_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_territory_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_tower_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_global_unlimit_rank_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_guild_apply_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_guild_chief_insert.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_guild_copy_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_guild_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_guild_member_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_hero_card_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_home_create_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_home_explore_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_home_furniture_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_home_garden_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_home_store_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_home_visit_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_item_monitor_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_level_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_merge_activity_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_muti_step_task_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_pet_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_proto_monitor_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_pvp_territory_store_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_rank_skiplist.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_rank_sql_container.hpp" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_score_level_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_server_nick_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_sql_associate_container.hpp" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_sql_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_sql_table_cache.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_swap_market_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_tactics_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_time_treasure_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_active_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_black_market_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_buy_back_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_buy_commodity_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_cross_fight_store_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_daily_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_deposit_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_event_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_grocery_store_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_guild_skill_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_guild_store_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_guild_task_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_honor_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_hufu_store_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_ibusy_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_ibusy_market_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_mail_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_pvp_store_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_qiyu_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_role_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_silk_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_stat_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_team_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_theme_activity_charge_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_uin_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_user_xuyuanqingdian_table.h" />
+    <ClInclude Include="..\..\server\logic_server\record\logic_record_wushen_info_table.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_ac_automaton.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_admin_container.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_api.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_connector_receiver.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_connector_sender.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_dirty_word_checker.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_logger.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_mysql_handle.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_mysql_writer_thread.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_platform.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_poller.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_statistics.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_tcpconnection.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_text_checker.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_timer.h" />
+    <ClInclude Include="..\..\server\logic_server\service\logic_service_zookeeper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\server\logic_server\service\logic_service_platform.cpp.in" />
+  </ItemGroup>
+  <ItemDefinitionGroup />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

@@ -1,0 +1,25 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="user_item_t" class_name="CRecordUserItemTable" cache_name="TUserItemTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_user_item_table">
+
+    <field_info desc="uid"                  type="int"  field_name="uid" primary_key="true" div ="true" comment="玩家uid" />	
+    <field_info desc="group_id"             type="int"  field_name="group_id" primary_key="true" comment="玩家区服" />
+    <field_info desc="item_id"   			type="int"  field_name="item_id" primary_key="true" comment="道具ID" />
+	
+    <field_info desc="amount"               type="int"  field_name="amount" comment="道具数量" />
+	<field_info desc="add_up_amount"       	type="int"  field_name="add_up_amount" comment="累计获得数量" />
+	<field_info desc="opened_count"         type="int"  field_name="opened_count" comment="已经开启次数" />
+	<field_info desc="next_open_time"       type="int"  field_name="next_open_time" comment="下次使用时间" />
+	       
+</table_info>  

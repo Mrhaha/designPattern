@@ -1,0 +1,28 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="user_qiyu_t" class_name="CRecordUserQiyuTable" cache_name="TUserQiyuTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_user_qiyu_table">
+
+    <field_info desc="uid" type="int"  field_name="uid" primary_key="true" div ="true" comment="玩家uid" />	
+    <field_info desc="group_id" type="int"  field_name="group_id" primary_key="true" comment="玩家区服" />
+    <field_info desc="qiyu_id" type="int"  field_name="map_id" primary_key="true" comment="地图id" />
+    <field_info desc="node_id" type="int"  field_name="node_id" primary_key="true" comment="结点id" />
+    <field_info desc="node_state" type="int"  field_name="node_state" comment="结点状态，0-未打开，1-已打开，2-已完成" />
+	<field_info desc="node_event_type" type="int"  field_name="node_event_type" comment="结点事件类型" />
+    <field_info desc="node_event_id" type="int"  field_name="node_event_id" comment="结点事件id" />
+	<field_info desc="params_int"    type="userdata"  field_name="params_int" class="std::vector<int32_t>" size="256" comment="整数参数" />
+	<field_info desc="params_str"    type="userdata"  field_name="params_str" class="std::vector<std::string>" size="256" comment="字符串参数" />
+
+    
+
+</table_info>

@@ -1,0 +1,32 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="user_mail_t" class_name="CRecordUserMailTable" cache_name="TUserMailTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_user_mail_table">
+
+    <field_info desc="uid"          type="int"  field_name="uid" primary_key="true" div ="true" comment="玩家uid" />
+    <field_info desc="group_id"     type="int"  field_name="group_id" primary_key="true" comment="玩家区服" />
+    <field_info desc="mail_id"      type="int"  field_name="mail_id" primary_key="true" comment="邮件ID" />
+	
+    <field_info desc="is_new"       type="int"  field_name="is_new" comment="是否新邮件" />
+    <field_info desc="is_received"  type="int"  field_name="is_received" comment="是否接受附件" />
+    <field_info desc="create_time"  type="int"  field_name="create_time" comment="创建时间" />
+    <field_info desc="read_time"    type="int"  field_name="read_time" comment="阅读时间" />    
+    <field_info desc="title"       type="std::string"  field_name="title" size="64" comment="邮件标题" />
+    <field_info desc="sender"       type="std::string"  field_name="sender" size="64" comment="邮件发送者" />
+    <field_info desc="content"      type="std::string"  field_name="content" size="1024" comment="邮件正文" />
+    <field_info desc="attachment"   type="userdata"  field_name="attachment" class="std::vector<CPackGameItem>" size="256" comment="邮件附件" />
+    <field_info desc="award_multiple"  type="int"  field_name="award_multiple" default="1" comment="奖励倍数" />
+	<field_info desc="expired_time"  type="int"  field_name="expired_time" default="0" comment="过期时间" />
+
+	
+</table_info>

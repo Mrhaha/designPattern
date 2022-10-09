@@ -1,0 +1,37 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+global              表示数据是全局数据, 不是用户数据, 在 select 的时候有差异
+
+-->
+
+<table_info table_name="global_basic_t" class_name="CRecordGlobalBasicTable" cache_name="TGlobalBasicTable"
+    div_num ="0" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_global_basic_table">
+
+    <field_info desc="server_id"    type="int"  field_name="server_id" primary_key="true" where="true" comment="服务器ID"/>
+	
+	<field_info desc="primary_key_index" 		    	type="int"  field_name="primary_key_index" default="1" comment="主键key的索引"/>
+	<field_info desc="last_award_rank_time" 			type="int"  field_name="last_award_rank_time" comment="上一次排行榜奖励时间"/>
+    <field_info desc="fight_power_award_rank_time" 		type="int"  field_name="fight_power_award_rank_time" comment="战力排行榜奖励时间" />
+    <field_info desc="last_merge_server_time"     		type="int"  field_name="last_merge_server_time" comment="上一次合服时间" />
+	<field_info desc="countdown_hero_activity_id"    	type="int"  field_name="countdown_hero_activity_id" comment="限时神将活动ID" />
+	<field_info desc="check_update_time"           		type="int"  field_name="check_update_time" comment="检查更新时间" />
+	
+	<field_info desc="entire_last_update_time"    	type="int"  field_name="entire_last_update_time" comment="全民战役上次更新时间" />
+	<field_info desc="entire_war_level"           	type="int"  field_name="entire_war_level" comment="全民战役等级" />
+	<field_info desc="entire_war_theme_id"          type="int"  field_name="entire_war_theme_id" comment="全民战役当前主题"/>
+	<field_info desc="entire_war_god_uid"        	type="int"  field_name="entire_war_god_uid" comment="全民战役战神uid" />
+	<field_info desc="entire_war_god_group_id"   	type="int"  field_name="entire_war_god_group_id" comment="全民战役战神服ID" />
+	<field_info desc="entire_war_buff"    			type="userdata"  field_name="entire_war_buff" class="CPackEntireWarBuffVector" size="256" comment="全民战役buff" />
+	<field_info desc="news_data"    				type="userdata"  field_name="news_data" class="CPackWenWenNewsServerData" size="4096" comment="文文日报全服数据" />
+	<field_info desc="affix_vec"    				type="userdata"  field_name="affix_vec" class="std::vector<int>" size="200" comment="装备副本词缀" />
+	<field_info desc="guild_war_cur_boss"           type="userdata"  field_name="guild_war_cur_boss"   class="std::vector<int>" size="200" comment="公会战当前Boss"/>
+	
+</table_info>

@@ -1,0 +1,73 @@
+#! /bin/sh
+#
+# chkconfig: - 85 15
+# description: yqdmx logic server
+#
+
+RETVAL=0
+
+ulimit -c unlimited
+ulimit -n 65535
+
+LOGIC_DIR=/opt/LogicServer
+LOGIC_BIN=logic_svr
+
+check_status()
+{
+    echo $svr
+    $svr -v
+    count=`ps -ef|grep "$svr" | grep -v grep |wc -l`
+    if [ $count -gt 0 ]; then
+        echo "start"
+        ps -ef|grep "$svr" | grep -v grep | awk '{print $5}'
+    else
+        echo "stop"
+        echo "0"
+    fi
+}
+
+case "$1" in
+    start)
+        echo "Starting logic server "
+        for d in `find -P ${LOGIC_DIR} -maxdepth 1 -type d -iregex ".*[0-9]+$"`; do
+            cd $d
+            chmod a+x $d/${LOGIC_BIN}
+            $d/${LOGIC_BIN} -d
+        done
+        RETVAL=$?
+        ;;
+    stop)
+        echo "Shutting down logic server "
+        for d in `ps -ef|grep ${LOGIC_BIN} |grep -v grep |awk '{print $2}'`; do
+            kill -USR2 $d
+        done
+        RETVAL=$?
+        ;;
+    reload)
+        echo "Reloading logic server "
+        for d in `ps -ef|grep ${LOGIC_BIN} |grep -v grep |awk '{print $2}'`; do
+            kill -USR1 $d
+        done
+        RETVAL=$?
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        RETVAL=$?
+        ;;
+    status)
+        for d in `find -P  ${LOGIC_DIR} -maxdepth 1 -type d -iregex ".*[0-9]+$"`; do
+            svr=$d/${LOGIC_BIN}
+            chmod a+x $d/${LOGIC_BIN}
+            check_status
+        done
+        RETVAL=$?
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|reload|status}"
+        exit 1
+        ;;
+esac
+
+exit $RETVAL

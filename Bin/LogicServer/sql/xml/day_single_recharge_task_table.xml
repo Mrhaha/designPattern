@@ -1,0 +1,23 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="day_single_recharge_task_t" class_name="CRecordDaySingleRechargeTaskTable" cache_name="TDaySingleRechargeTaskTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_day_single_recharge_task_table">
+
+    <field_info desc="uid" type="int"  field_name="uid" primary_key="true" div ="true" comment="玩家uid" />	
+    <field_info desc="group_id" type="int"  field_name="group_id" primary_key="true" comment="玩家区服" />
+    <field_info desc="activity_id" type="int"  field_name="activity_id" primary_key="true" comment="活动ID" />
+    <field_info desc="task_id" type="int"  field_name="task_id" primary_key="true" comment="任务ID" />
+    <field_info desc="reward_count" type="int"  field_name="reward_count" comment="已经奖励次数" />
+    <field_info desc="can_reward_count" type="int"  field_name="can_reward_count" comment="可领取任务奖励次数" />
+
+</table_info>

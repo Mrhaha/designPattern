@@ -1,0 +1,11 @@
+<table_info table_name="global_entire_map_t" class_name="CRecordGlobalEntireWarMapTable" cache_name="TGlobalEntireMapTable"
+    div_num ="0" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_global_entire_map_table">
+    
+    <field_info desc="server_id"    type="int"  field_name="server_id" primary_key="true" where="true" comment="服务器ID"/>
+    <field_info desc="war_id"       type="int"  field_name="war_id" primary_key="true" comment="战役ID"/>
+    
+	<field_info desc="target_progress" type="uint64_t" field_name="target_progress" unsigned="true" comment="目标进度"/>
+	<field_info desc="cur_progress" type="uint64_t" field_name="cur_progress"  	unsigned="true" comment="当前进度"/>
+	<field_info desc="is_passed"    type="int"  	field_name="is_passed" 		comment="当前节点是否已通关"/>
+</table_info>

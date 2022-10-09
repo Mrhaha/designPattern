@@ -1,0 +1,67 @@
+#! /bin/sh
+#
+# chkconfig: - 85 15
+# description: game connector server
+# 启动时进程会更新pid文件
+
+RETVAL=0
+
+ulimit -c unlimited
+ulimit -n 65535
+
+CONN_PATH=/opt/Connector
+CONN_SVR=${CONN_PATH}/connector_svr
+
+check_status()
+{
+    echo $CONN_SVR
+    $CONN_SVR -v
+    count=`ps -ef|grep "$CONN_SVR" | grep -v grep |wc -l`
+    if [ $count -gt 0 ]; then
+        echo "start"
+        ps -ef|grep "$CONN_SVR" | grep -v grep | awk '{print $5}'
+    else
+        echo "stop"
+        echo "0"
+    fi
+}
+
+case "$1" in
+    start)
+        echo -n "Starting connector server... "
+        cd ${CONN_PATH}
+        chmod a+x ${CONN_SVR}
+        ${CONN_SVR} -d
+        RETVAL=$?
+        echo "done"
+        ;;
+    stop)
+        echo -n "Shutting down connector server... "
+        kill -USR2 `ps -ef|grep "${CONN_SVR}" |grep -v grep | awk '{print $2}'`
+        RETVAL=$?
+        echo "done"
+        ;;
+    reload)
+        echo -n "Reloading connector server... "
+        kill -USR1 `ps -ef|grep "${CONN_SVR}" |grep -v grep | awk '{print $2}'`
+        RETVAL=$?
+        echo "done"
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        RETVAL=$?
+        ;;
+    status)
+        chmod a+x ${CONN_SVR}
+        check_status
+        RETVAL=$?
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|reload|status}"
+        exit 1
+        ;;
+esac
+
+exit $RETVAL

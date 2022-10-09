@@ -1,0 +1,539 @@
+#pragma once
+
+
+enum SERVER_CMD_LOGIC_DEFINE
+{//特别注意:LOGIC协议的ID范围: [10000 -- 11999]
+    MSG_LOGIC_NULL_CMD = 10000,
+    MSG_LOGIC_GET_USER_INFO = 10001,					//获取玩家信息
+    MSG_LOGIC_CREATE_ROLE = 10002,					//创建角色
+
+    MSG_LOGIC_RECONNECT = 10005,						//重连
+    MSG_LOGIC_COMBINE_CARD_SOUL = 10006,				//卡片将魂招募
+    MSG_LOGIC_UPGRADE_CARD_LEVEL = 10007,				//卡片升级
+    MSG_LOGIC_UPGRADE_CARD_COLOR = 10008,				//卡片进阶
+    MSG_LOGIC_UPGRADE_CARD_STAR = 10009,				//卡片升星
+
+    MSG_LOGIC_NOTIFY_ITEM_CHANGE = 10011,			    //特殊的道具变更通知
+    MSG_LOGIC_GET_EQUIP_LEVEL_AFFIX = 10012,			//获取装备副本词缀
+    MSG_LOGIC_NOTIFY_PHY_DATA = 10013,			    //通知体力变化
+    MSG_LOGIC_FIGHT_LEVEL = 10014,					//开始关卡
+    MSG_LOGIC_GET_FIGHT_LEVEL_GIFT = 10015,			//获取关卡胜利奖励
+    MSG_LOGIC_SWEEP_LEVEL = 10016,					//扫荡关卡
+    MSG_LOGIC_NOTIFY_QUEST_DATA = 10017,			//通知任务信息
+    MSG_LOGIC_QUEST_REWARD = 10018,			        //领取任务奖励
+    MSG_LOGIC_CARD_SOUL_EXCHANGE = 10019,		    //伙伴碎片转换
+    MSG_LOGIC_UPGRADE_CARD_TALENT = 10020,		    //升级伙伴天赋
+
+    MSG_LOGIC_GET_LEVEL_INFO = 10022,					//获取关卡信息
+    MSG_LOGIC_GET_MUTI_STEP_TASK_DETAIL = 10023,		//获取成就详细信息
+    MSG_LOGIC_GET_MUTI_STEP_TASK_GIFT = 10024,		//获取成就奖励
+    MSG_LOGIC_RECORD_USER_GUIDE = 10025,				//记录玩家引导进度
+    MSG_LOGIC_GET_CHAPTER_STAR_GIFT = 10026,			//获取章节星星奖励
+    MSG_LOGIC_RETRY_FIGHT_LEVEL = 10027,				//关卡重新重试
+
+    MSG_LOGIC_PHY_STORE_EXTRACT = 10033,			//提取食盒体力
+    MSG_LOGIC_DAILY_SIGN = 10034,			        //每日签到
+
+    MSG_LOGIC_NOTIFY_BADGE_DATA = 10036,			//通知徽章信息
+    MSG_LOGIC_GET_BADGE_LIST = 10037,			    //获取徽章墙
+    MSG_LOGIC_SET_BADGE_LIST = 10038,			    //设置徽章墙
+
+    MSG_LOGIC_SYNC_SERVER_TIMESTAMP = 10049,        	//同步系统时间
+    MSG_LOGIC_ADD_BGM = 10050,			            //新加背景音乐
+    MSG_LOGIC_DEL_BGM = 10051,			            //删除背景音乐
+    MSG_LOGIC_SET_BGM_LIST = 10052,			        //设置背景音乐
+    MSG_LOGIC_SET_THEME_SKIN = 10053,			        //设置主界面皮肤
+    MSG_LOGIC_SET_RUNE_CARD = 10054,			        //设置符卡
+    MSG_LOGIC_NOTIFY_EXPLORE_QUEST = 10055,             //通知家园探索任务
+    MSG_LOGIC_DAY_REFRESH_EVENT = 10056,				//通知每日刷新事件
+    MSG_LOGIC_GET_USER_MAIL = 10057,					//获取玩家邮件
+    MSG_LOGIC_READ_USER_MAIL = 10058,					//阅读邮件
+    MSG_LOGIC_GET_USER_MAIL_BONUS = 10059,			//获取邮件附件
+    MSG_LOGIC_GET_SELF_PVP_INFO = 10060,				//获取自己PVP信息
+    MSG_LOGIC_GET_COMMODITY_INFO = 10061,			//卡池信息
+    MSG_LOGIC_BUY_COMMODITY = 10062,				//卡池抽卡
+    MSG_LOGIC_COMMODITY_PT_EXCHANGE = 10063,		//卡池PT点数兑换
+
+    MSG_LOGIC_CHANGE_PVP_ENEMY = 10065,				    //更换竞技场敌人列表
+    MSG_LOGIC_FIGHT_PVP = 10066,						//竞技场开始战斗
+    MSG_LOGIC_FIGHT_PVP_RESULT = 10067,				    //竞技场结束战斗，获取奖励
+    MSG_LOGIC_GET_PVP_RANK_LIST = 10068,				//获取竞技场排行列表
+    MSG_LOGIC_GET_PVP_FIGHT_HISTORY = 10069,			//获取竞技场战斗历史
+    MSG_LOGIC_GET_PVP_LAST_DAY_RANK_LIST = 10070,		//获取昨日竞技场排行
+    MSG_LOGIC_GET_PVP_ENEMY_LIST = 10071,               //获取竞技场对手列表
+    MSG_LOGIC_GET_PVP_CONTINUE_WIN_REWARD = 10072,      //获取竞技场连胜奖励
+
+    MSG_LOGIC_BUY_ENERGY = 10074,					//购买体力
+    MSG_LOGIC_BUY_GOLD = 10075,						//购买金币
+    MSG_LOGIC_SEQUENTIAL_BUY_GOLD = 10076,			//连续购买金币
+    MSG_LOGIC_FIGHT_PVP_SWEEP = 10077,			    //竞技场扫荡
+    MSG_LOGIC_REFRESH_LEVEL_TIMES = 10078,		    //刷新关卡次数
+
+    MSG_LOGIC_REFRESH_PVP_FIGHT_TIMES = 10080,		//刷新竞技场战斗次数
+
+    MSG_LOGIC_GET_ACTIVE_INFO = 10083,				//获取活动信息
+    MSG_LOGIC_RECEIVE_ACTIVE_BONUS = 10084,			//获取活动奖励
+    MSG_LOGIC_CHECK_ROLE_EXIST = 10085,				//检查角色名是否存在
+
+    MSG_LOGIC_USER_DEPOSIT_INFO = 10090,				//玩家充值信息
+    MSG_LOGIC_USER_RECHARGE_NOTIFY = 10091,			//玩家充值通知
+    MSG_LOGIC_GET_AVATAR_INFO = 10092,				//获取头像信息
+    MSG_LOGIC_SET_AVATAR_ICON = 10093,				//设置头像ICON
+    MSG_LOGIC_SET_AVATAR_BORDER = 10094,				//设置头像边框
+    MSG_LOGIC_NOTIFY_ACTIVITY_CHANGE = 10095,			//通知活动改变
+
+    MSG_LOGIC_GET_FIRST_DEPOSIT_BONUS = 10100,		//获取首充奖励
+
+    MSG_LOGIC_BUY_FOUNDATION = 10104,					//购买基金
+    MSG_LOGIC_GET_LEVEL_RACE_RANK = 10105,			//
+    MSG_LOGIC_NOTIFY_BROADCAST = 10110,				//广播通知
+    MSG_LOGIC_GET_CHALLENGE_UI_INFO = 10111,			//获取挑战UI信息
+    MSG_LOGIC_NOTIFY_HAS_NEW_MAIL = 10112,			//通知新邮件
+
+    MSG_LOGIC_BUY_VIP_BAG = 10116,					//购买vip礼包
+
+    MSG_LOGIC_ZHUHAI_REFRESH_STORE = 10120,         //竹海商店刷新
+    MSG_LOGIC_ZHUHAI_SAVE_TEAM = 10121,             //竹海保存队伍
+    MSG_LOGIC_ZHUHAI_BUY_STORE = 10122,             //竹海商店购买
+    MSG_LOGIC_ZHUHAI_SET_BLESS = 10123,             //设置竹海祝福
+    MSG_LOGIC_ZHUHAI_CHANGE_LEVEL = 10124,		    //设置竹海难度
+    MSG_LOGIC_ZHUHAI_GET_INFO = 10125,		        //获取竹海信息
+    MSG_LOGIC_ZHUHAI_UPDATE_GRESS = 10126,		    //更新竹海进度
+    MSG_LOGIC_ZHUHAI_ADD_BUFF = 10127,		        //竹海选择BUFF
+    MSG_LOGIC_SELL_GAME_ITEM = 10128,						//出售道具
+    MSG_LOGIC_UPGRADE_CARD_COLOR_MATERIAL = 10129,		//卡片宝石镶嵌
+    MSG_LOGIC_GET_LEVEL_BONUS = 10130,					//获取副本奖励
+    MSG_LOGIC_GET_ALL_ACTIVE_INFO = 10131,				//获取所有活动信息
+    MSG_LOGIC_UPDATE_FIGHT_POWER = 10132,					//更新战斗力
+    MSG_LOGIC_GET_FIGHT_POWER_SELF_RANK = 10133,			//获取战斗力自己排行
+    MSG_LOGIC_GET_FIGHT_POWER_RANK_LIST = 10134,			//获取战斗力排行列表
+    MSG_LOGIC_COMBINE_GAME_ITEM = 10136,					//道具合成
+    MSG_LOGIC_GET_CROSS_FIGHT_RESULT = 10138,				//过关斩将结束，获取奖励
+    MSG_LOGIC_GET_CROSS_FIGHT_CHALLENGER = 10139,			//获取过关斩将挑战信息
+    MSG_LOGIC_RESET_CROSS_FIGHT_CHALLENGER = 10140,		//重置过关斩将挑战
+
+    MSG_LOGIC_CHECK_NICK_CORRECT = 10145,					//检查昵称是否可用
+
+    MSG_LOGIC_MAIL_ACTIVITY_AWARD = 10147,				//邮件补发活动未领奖励
+    MSG_LOGIC_CHANGE_VARIABLE_SOUL = 10148,				//万能将魂转换
+
+    MSG_LOGIC_REFRESH_CROSS_FIGHT_RESET_TIMES = 10150,	//刷新过关斩将重置次数
+    MSG_LOGIC_GET_DAILY_DEPOSIT_BONUS = 10151,			//获取每日充值奖励
+
+    MSG_LOGIC_GET_FIGHT_POWER_ACTIVE_STAGE_BONUS = 10153,	//获取战斗力活动奖励
+
+    MSG_LOGIC_BUY_REFRESH_TOKEN = 10162,					//购买刷新币
+    MSG_LOGIC_FIGHT_THEME_LEVEL = 10163,					//开始活动主题副本
+    MSG_LOGIC_GET_FIGHT_THEME_LEVEL_BONUS = 10164,		//结算活动主题副本
+    MSG_LOGIC_BUY_VITALITY = 10165,						//购买活力
+
+    MSG_LOGIC_SWEEP_FIGHT_THEME_LEVEL = 10170,			// 扫荡活动主题副本
+    MSG_LOGIC_GET_LEVEL_TIMES_INFO = 10171,		    //获取关卡次数详情
+
+    MSG_LOGIC_GET_SERIAL_PAY_AWARD = 10174,				//获得连续充值奖励
+    MSG_LOGIC_FIGHT_CLIMB_TOWER_RESULT = 10175,			//镇魂之塔战斗结束
+    MSG_LOGIC_RESET_CLIMB_TOWER_ORDER = 10176,			//重置镇魂之塔进度
+    MSG_LOGIC_FIGHT_CLIMB_TOWER_START = 10177,			//开始镇魂之塔战斗
+    MSG_LOGIC_GET_USER_STAT_LIST = 10178,					//获得用户统计列表
+    MSG_LOGIC_GET_CLIMB_TOWER_RANK_LIST = 10179,			//获取爬塔排行列表
+    MSG_LOGIC_GET_CLIMB_TOWER_SELF_RANK = 10180,			//获取爬塔自己排行
+    MSG_LOGIC_SWEEP_CLIMB_TOWER_START = 10181,			//扫荡镇魂之塔开始
+    MSG_LOGIC_SWEEP_CLIMB_TOWER_AWARD = 10182,			//扫荡镇魂之塔领奖
+    MSG_LOGIC_SWEEP_CLIMB_TOWER_YUANBAO = 10183,			//扫荡镇魂之塔完成需要的元宝
+    MSG_LOGIC_CHECK_SERIAL_PAY_AWARD = 10184,				//检查连续充值奖励
+    MSG_LOGIC_GET_GUILD_LIST = 10185,						//获取公会列表
+    MSG_LOGIC_GET_SELF_GUILD_INFO = 10186,				//获取自己公会的信息
+    MSG_LOGIC_CREATE_GUILD = 10187,						//创建公会
+    MSG_LOGIC_LEAVE_GUILD = 10188,						//退出公会
+    MSG_LOGIC_UPDATE_GUILD_BULLETIN = 10189,				//更新公会公告
+    MSG_LOGIC_UPDATE_GUILD_POST = 10190,					//改变公会成员的职位
+    MSG_LOGIC_TRANSFER_GUILD = 10191,						//移交公会
+    MSG_LOGIC_EXPEL_GUILD = 10192,						//踢出公会
+    MSG_LOGIC_APPLY_JOIN_GUILD = 10193,					//申请加入公会
+    MSG_LOGIC_DEAL_GUILD_APPLY = 10194,					//处理公会申请
+    MSG_LOGIC_GUILD_BOSS_GET_HURT = 10195,					//获取公会BOSS伤害记录
+    MSG_LOGIC_GUILD_BOSS_HURT_LIST = 10196,					//获取公会BOSS伤害排行
+    MSG_LOGIC_GUILD_GET_LOG = 10197,					//获取公会日志
+
+    MSG_LOGIC_GUILD_DONATE = 10198,                      //社团捐献
+    MSG_LOGIC_GUILD_SIGN_IN = 10199,                     //社团签到
+    MSG_LOGIC_GUILD_SIGN_UPGRADE = 10200,                //社团签到奖励升级
+    MSG_LOGIC_GUILD_RANDOM_EXPERIENCE = 10201,           //社团随机遭遇
+    MSG_LOGIC_GUILD_GET_RANDOM_REWARD = 10202,           //社团随机奖励获取
+
+    MSG_LOGIC_GET_GUILD_APPLY_LIST = 10203,				//获取公会申请列表
+    MSG_LOGIC_GUILD_WISH_SET_CARD = 10204,              //公会祈愿设置伙伴
+    MSG_LOGIC_GUILD_WISH_SET_SWAP_CARD = 10205,         //公会祈愿设置交换伙伴
+    MSG_LOGIC_GUILD_WISH_GET_OTHER_SWAP_INFO = 10206,   //公会祈愿获取玩家交换伙伴详细信息
+    MSG_LOGIC_GUILD_WISH_PRESENT = 10207,               //公会祈愿赠送
+    MSG_LOGIC_GUILD_WISH_SWAP = 10208,                  //公会祈愿交换
+    MSG_LOGIC_GUILD_WISH_REWARD_NOTIFY = 10209,         //公会祈愿奖励通知
+    MSG_LOGIC_GUILD_WISH_REWARD_INFO = 10210,           //公会祈愿奖励信息
+
+    MSG_LOGIC_GET_OTHER_PLAYER_DETAIL = 10214,			//获取其他玩家详细信息
+    MSG_LOGIC_GET_GUILD_MEMBERS = 10215,			    //获取公会成员列表
+    MSG_LOGIC_GET_GUILD_FRAGMENT_HISTORY = 10216,      //获取公会碎片历史
+
+    MSG_LOGIC_GET_FRIEND_LIST = 10223,					//拉取好友列表
+    MSG_LOGIC_GET_FRIEND_APPLY_LIST = 10224,				//拉取好友申请
+    MSG_LOGIC_DEAL_FRIEND_APPLY = 10225,					//处理好友申请
+
+    MSG_LOGIC_ADD_FRIEND = 10227,							//添加好友
+    MSG_LOGIC_DELETE_FRIEND = 10228,						//删除好友
+    MSG_LOGIC_SEND_FRIEND_ENERGY = 10229,					//赠送好友体力
+    MSG_LOGIC_FASET_SEND_FRIEND_ENERGY = 10230,			//一键赠送好友
+
+    MSG_LOGIC_GET_FRIEND_RECOMMEND = 10233,				//获取好友推荐列表
+    MSG_LOGIC_SEARCH_FRIEND = 10234,						//查找好友
+
+    MSG_LOGIC_SEARCH_GUILD = 10247,						//搜索公会
+    MSG_LOGIC_LUCKY_BOX_LOTTERY = 10248,					//幸运魔盒抽奖
+    MSG_LOGIC_REPORT_GUIDE_STEP = 10249,					//上报引导步骤
+    MSG_LOGIC_SHOP_ITEM = 10250,							//购买物品
+
+    MSG_LOGIC_NOTIFY_HAVE_FRIEND_APPLY = 10253,			//通知有好友申请
+    MSG_LOGIC_PHY_ADD_BY_LEVEL_UP = 10254,			    //升级奖励的体力
+    MSG_LOGIC_NOTIFY_MODIFY_ITEM_EXTERNAL = 10255,		//通知外部修改道具hou
+    MSG_LOGIC_NUM_AUTO_INCREASE = 10256,					//数值自动增加
+    MSG_LOGIC_DELETE_MAIL = 10257,						//删除邮件
+    MSG_LOGIC_NOTIFY_USER_DAILY_DATA = 10258,				//通知玩家每日数据
+    MSG_LOGIC_GET_BANK_INFO = 10260,						//获取钱庄信息
+    MSG_LOGIC_BUY_BANK_GOLD = 10261,						//购买钱庄金券
+    MSG_LOGIC_SELL_BANK_GOLD = 10262,						//卖出钱庄金券
+    MSG_LOGIC_NOTIFY_ALL_AVY_INFO = 10263,			    //通知所有活动信息
+    MSG_LOGIC_NOTIFY_UPDATE_ACTIVITY_TASK = 10264,		//通知活动任务更新
+
+    MSG_LOGIC_AWARD_ACTIVITY_MULTI_TASK = 10267,			//皇叔多重任务悬赏领奖
+
+    MSG_LOGIC_EQUIP_FASHION = 10279,						//装备时装
+    MSG_LOGIC_GET_HAPPY_TURN_CARD = 10280,				//获取翻牌数据
+    MSG_LOGIC_GET_TURN_CARD_AWARD = 10281,				//获取翻牌奖励
+    MSG_LOGIC_TURNING_HAPPY_CARD = 10282,					//翻牌
+
+    MSG_LOGIC_SELECT_MULTI_COLOR_LANTERN = 10284,			//选择缤纷彩灯
+    MSG_LOGIC_CHANGE_NICK = 10285,						//改名
+    MSG_LOGIC_TURN_TABLE_LOTTERY = 10286,					//幸运转盘抽奖
+    MSG_LOGIC_GET_VIP_DAILY_AWARD = 10287,				//获取VIP每日奖励
+    MSG_LOGIC_NOTIFY_BUY_BACK_INFO = 10288,				//通知回购信息
+    MSG_LOGIC_GET_BUY_BACK_COUNT = 10289,					//购买回购次数
+    MSG_LOGIC_GET_RECOMMENDED_LINEUP_AWARD = 10290,		//获取推荐阵容奖励
+
+    MSG_LOGIC_GET_ACTIVITY_TASK_AWARD = 10293,			//获取活动任务就奖励
+    MSG_LOGIC_GET_MILITARK_LEVEL_RANK = 10294,			//获取军衔等级排行
+
+    MSG_LOGIC_NOTIFY_ITEM_ATTR = 10296,				    //通知道具属性
+
+    MSG_LOGIC_NOTIFY_CANDLE_ADD = 10298,					//通知获得蜡烛
+    MSG_LOGIC_GET_FLOWER_LANTER_LOG = 10299,				//获取花灯记录
+
+    MSG_LOGIC_CHECK_CAN_DEPOSIT = 10304,					//检查是否可以充值
+
+    MSG_LOGIC_NOTIFY_SERVER_CONFIG = 10307,				//通知服务器配置
+
+    MSG_LOGIC_GET_CHARM_RANK_LIST = 10309,				//获取魅力值排行榜
+    MSG_LOGIC_GET_AVY_REWARD = 10310,				    //获取活动奖励
+
+    MSG_LOGIC_NOTIFY_SHOP_COUNT = 10318,				//通知已购买次数
+    MSG_LOGIC_USE_ITEM = 10319,				            //使用各种道具
+
+    MSG_LOGIC_GET_MATCH_PVP_RANK_LIST = 10323,			//获取巅峰对决本服排行
+
+//其他功能
+    MSG_LOGIC_COMMON_NOTIFY = 10327,        // 通用弹确认框的通知
+    MSG_LOGIC_UPDATE_USER_AGE = 10328,           // 防沉迷更新玩家年龄
+    MSG_LOGIC_SYS_OTHER_BUY = 10329,          // 其他通用购买功能(豪华大餐补吃)
+
+    MSG_LOGIC_GET_ACTIVITY_COUNTDOWN_HERO = 10360,				//获取限时武将
+    MSG_LOGIC_GET_RANK_COUNTDOWN_HERO = 10361,				//获取限时武将排行
+    MSG_LOGIC_NOTIFY_CLIENT_LOGOUT = 10362,				//通知客户端登出
+    MSG_LOGIC_SEND_RED_BAG = 10363,						//发红包
+    MSG_LOGIC_RECEIVE_RED_BAG = 10364,					//领红包
+    MSG_LOGIC_GET_RED_BAG_LIST = 10365,					//获取红包列表
+    MSG_LOGIC_CHECK_RED_BAG_VALID = 10366,				//检查红包是否有效
+
+    MSG_LOGIC_GET_LUCKY_CAT_HISTORY = 10370,				//获取招财猫记录
+    MSG_LOGIC_NOTIFY_MERGE_ACTIVITY_INFO = 10371,			//通知合服活动数据
+    MSG_LOGIC_NOTIFY_MERGE_ACTIVITY_CHANGE = 10372,		//通知合服活动数据变更
+    MSG_LOGIC_MERGE_ACTIVITY_TASK_AWARD = 10373,			//获取合服活动任务奖励
+    MSG_LOGIC_MERGE_ACTIVITY_EXCHANGE = 10374,			//购买合服活动兑换物品
+    MSG_LOGIC_FIGHT_MERGE_ACTIVITY = 10375,				//合服活动副本开始战斗
+    MSG_LOGIC_FIGHT_MERGE_ACTIVITY_RESULT = 10376,		//合服活动副本结束战斗
+
+    MSG_LOGIC_EQUIPMENT_EQUIP = 10377,		            //伙伴装备
+    MSG_LOGIC_EQUIPMENT_DIV = 10378,		            //伙伴装备分解
+    MSG_LOGIC_EQUIPMENT_LOCK = 10379,		            //伙伴装备上锁
+    MSG_LOGIC_EQUIPMENT_ADD_EXP = 10380,                //伙伴装备升级
+    MSG_LOGIC_EQUIPMENT_UPGRADE = 10381,                //伙伴装备升阶
+    MSG_LOGIC_EQUIPMENT_REFINE = 10382,                 //伙伴装备洗练
+    MSG_LOGIC_EQUIPMENT_REFINE_OPT = 10383,             //伙伴装备洗练结果操作
+
+    MSG_LOGIC_NOTIFY_HONOR_UPDATE = 10390,				//通知称号更新
+    MSG_LOGIC_UNLOCK_HONOR = 10391,						//解锁称号
+    MSG_LOGIC_EQUIP_HONOR = 10392,						//装备称号
+
+//全面战役
+    MSG_LOGIC_GET_ENTIRE_WAR_INFO = 10400,		//获取全民战役信息
+    MSG_LOGIC_FIGHT_ENTIRE_WAR_START = 10401,		//开始全民战役
+    MSG_LOGIC_FIGHT_ENTIRE_WAR_RESULT = 10402,	//结束全民战役
+    MSG_LOGIC_GET_ENTIRE_WAR_MARKET = 10403,		//拉取全民战役集市
+    MSG_LOGIC_BUY_ENTIRE_WAR_MARKET = 10404,		//购买全民战役集市
+    MSG_LOGIC_GET_ENTIRE_WAR_TREASURE = 10405,	//拉取全民战役宝箱
+    MSG_LOGIC_DIG_ENTIRE_WAR_TREASURE = 10406,	//挖去全民战役宝箱
+    MSG_LOGIC_GET_ENTIRE_WAR_QUESTION = 10407,	//获取全民战役题目
+    MSG_LOGIC_CHANGE_ENTIRE_WAR_QUESTION = 10408,	//更换全民战役题目
+    MSG_LOGIC_ANSWER_ENTIRE_WAR_QUESTION = 10409,	//回答全民战役题目
+    MSG_LOGIC_GET_ENTIRE_WAR_MAP_AWARD = 10410,	//获取全民战役占领奖励
+    MSG_LOGIC_UPGRADE_ENTIRE_MILITARK_LEVEL = 10411,	//升级战役军衔等级
+    MSG_LOGIC_GET_ENTIRE_WAR_FINAL_AWARD = 10412,		//获取全民战役宝箱奖励
+    MSG_LOGIC_GET_ENTIRE_WAR_RANK = 10413,		//获取全民战役排行
+    MSG_LOGIC_WORSHIP_ENTIRE_WAR_GOD =10414,		//膜拜战神
+    MSG_LOGIC_BUY_ACTION_COIN = 10415,			//购买行动力
+    MSG_LOGIC_CROSS_FIGHT_AUTO_FIGHT = 10416,		//过关斩将自动战斗
+    MSG_LOGIC_SWEEP_ENTIRE_WAR_CREEPS = 10417,	//扫荡野怪关卡
+    MSG_LOGIC_SIMPLE_GAME_ENTIRE_WAR = 10418,   //全民战役小游戏
+
+//新版聊天
+    MSG_LOGIC_PUSH_BROAD_CAST = 10700,				//推送公告给客户端
+    MSG_LOGIC_NOTIFY_BROAD_CAST_TALK = 10701,			//新公告给客户端公告面板
+
+    MSG_LOGIC_PUSH_TALK = 10705,				        //推送聊天消息
+    MSG_LOGIC_USER_TALK = 10706,				        //聊天
+    MSG_LOGIC_HIDE_USER_TALK_REQ = 10707,				//屏蔽玩家聊天
+    MSG_LOGIC_JUBAO_USER_REQ = 10708,					//举报玩家
+
+    MSG_LOGIC_READ_PRIVATE_TALK_REQ = 10710,			//读取私聊信息
+
+//奇遇
+    MSG_LOGIC_QIYU_INFO_NOTIFY = 10740,				//奇遇信息通知
+    MSG_LOGIC_QIYU_MOVE_REQ = 10741,					//跳转到某个新位置
+    MSG_LOGIC_QIYU_EVENT_NOTICE = 10743,				//奇遇事件通知
+    MSG_LOGIC_QIYU_FINISH_REQ = 10744,				//完成奇遇请求
+    MSG_LOGIC_QIYU_RES_NOTICE = 10745,				//奇遇结果通知
+    MSG_LOGIC_QIYU_REFRESH_REQ = 10746,				//奇遇刷新请求（测试用）
+    MSG_LOGIC_QIYU_RONGLIAN_REQ = 10747,				//熔炼请求
+    MSG_LOGIC_QIYU_FIGHT_START = 10748,				//战斗开始
+    MSG_LOGIC_QIYU_FIGHT_RESULT = 10749,				//战斗结果通知
+    MSG_LOGIC_QIYU_CANGBAOTU_DUIHUAN_REQ = 10750,		//藏宝图兑换请求
+    MSG_LOGIC_QIYU_CANGBAOTU_USE_REQ = 10751,			//藏宝图使用
+    MSG_LOGIC_QIYU_CANGBAOTU_SUIPIAN_NOTIFY = 10752,	//藏宝图碎片信息通知
+    MSG_LOGIC_QIYU_GET_INFO_REQ = 10753,				//奇遇获取信息请求
+
+//双十二狂欢
+    MSG_LOGIC_THEME_ACTIVITY_CHARGE_GET_INFO_REQ = 10780,		//主动获取信息请求
+    MSG_LOGIC_THEME_ACTIVITY_CHARGE_NOTIFY = 10781,			//信息通知
+    MSG_LOGIC_THEME_ACTIVITY_CHARGE_GET_REWARD_REQ = 10782,	//领取奖励请求
+    MSG_LOGIC_THEME_ACTIVITY_CHARGE_BUY_REQ = 10783,			//购买请求
+    MSG_LOGIC_THEME_ACTIVITY_CHARGE_CHARGE_REQ = 10784,		//充值预请求
+    MSG_LOGIC_THEME_ACTIVITY_CHARGE_CHANGE_NOTIFY = 10785,	//单个任务修改通知
+
+//主公很忙
+    MSG_LOGIC_IBUSY_GET_INFO_REQ = 10800,						//获取信息请求
+    MSG_LOGIC_IBUSY_INFO_NOTICE = 10801,						//信息通知
+    MSG_LOGIC_IBUSY_BASE_INFO_NOTICE = 10802,					//基础信息通知
+    MSG_LOGIC_IBUSY_CHANGE_TASK_REQ = 10803,					//换一批任务请求
+    MSG_LOGIC_IBUSY_TASK_NOTICE = 10804,						//任务信息通知
+    MSG_LOGIC_IBUSY_GET_LEVEL_REWARD_REQ = 10805,				//领取官邸奖励请求
+    MSG_LOGIC_IBUSY_LEVELREWARD_INFO_NOTICE = 10806,			//官邸奖励领取信息通知
+    MSG_LOGIC_IBUSY_GET_MARKET_DATA_REQ = 10807,				//获取宝物库房信息请求
+    MSG_LOGIC_IBUSY_REFRESH_MARKET_REQ = 10808,				//刷新宝物库房请求
+    MSG_LOGIC_IBUSY_MARKET_DATA_NOTICE = 10809,				//宝物库房信息通知
+    MSG_LOGIC_IBUSY_MARKET_BUY_REQ = 10810,					//宝物库房购买请求
+    MSG_LOGIC_IBUSY_PAIQIAN_REQ = 10811,						//派遣请求
+    MSG_LOGIC_IBUSY_GET_SCORE_RANK_LIST = 10812,				//获取排行榜
+    MSG_LOGIC_IBUSY_GET_SCORE_SELF_RANK = 10813,				//获取个人排名
+    MSG_LOGIC_IBUSY_GET_DEPOSIT_LEVEL_AWARD = 10814,			//领取充值官邸奖励请求
+    MSG_LOGIC_IBUSY_GET_DEPOSIT_EXP_AWARD = 10815,				//领取充值每日经验
+
+//元旦活动
+            MSG_LOGIC_SCORE_LEVEL_GET_ACTIVE_INFO = 10830,			//获取信息请求
+    MSG_LOGIC_SCORE_LEVEL_INFO_NOTICE = 10831,				//信息通知
+    MSG_LOGIC_SCORE_LEVEL_FIGHT_START = 10832,				//战斗开始
+    MSG_LOGIC_SCORE_LEVEL_FIGHT_RESULT = 10833,				//战斗结果通知
+    MSG_LOGIC_SCORE_LEVEL_FIGHT_SWEEP = 10834,				//关卡扫荡
+    MSG_LOGIC_SCORE_LEVEL_GET_SCORE_AWARD = 10835,			//领取积分宝箱奖励请求
+    MSG_LOGIC_SCORE_LEVEL_BUY_XINGDONGLI = 10836,		        //购买行动力
+
+//每日单笔
+            MSG_LOGIC_GET_DAY_SINGLE_RECHARGE_INFO = 10845,			//获取每日单笔信息
+    MSG_LOGIC_NOTIFY_DAY_SINGLE_RECHARGE_INFO = 10846,		//通知每日单笔信息
+    MSG_LOGIC_NOTIFY_DAY_SINGLE_RECHARGE_TASK_CHANGE = 10847,	//通知每日单笔单个任务信息修改
+    MSG_LOGIC_GET_DAY_SINGLE_RECHARGE_REWARD = 10848,			//领取每日单笔奖励
+
+//月通行证
+    MSG_LOGIC_MONTH_PASS_NOTIFY = 10851,                //月通行证数据通知
+    MSG_LOGIC_MONTH_PASS_TASK_NOTIFY = 10852,           //月通行证任务数据通知
+    MSG_LOGIC_GET_MONTH_PASS_AWARD = 10853,             //获取月通行证奖励
+    MSG_LOGIC_GET_MONTH_PASS_TASK_AWARD = 10854,        //获取月通行证任务奖励
+    MSG_LOGIC_MONTH_PASS_EXCHANGE = 10855,              //请求月通行证道具兑换
+    MSG_LOGIC_MONTH_PASS_WISH_ITEM = 10856,             //请求月通行证许愿池道具
+    MSG_LOGIC_MONTH_PASS_DAILY_WISH = 10857,            //请求月通行证每日许愿
+
+//老系统中增加新协议
+    MSG_LOGIC_GET_FIGHT_REPORT = 11502,				//获取战报
+
+    MSG_LOGIC_GET_SELF_SIMPLE_RANK_INFO = 11509,			//获取各个排行榜个人简要信息
+
+// 新家园
+    MSG_LOGIC_GET_HOME_INFO = 11510,			    //获取家园信息
+    MSG_LOGIC_HOME_UNEQUIP_GOODS = 11511,			//卸下家具
+    MSG_LOGIC_HOME_EQUIP_GOODS = 11512,			    //装备家具
+    MSG_LOGIC_HOME_BUILD = 11513,			        //家园建造房间
+    MSG_LOGIC_HOME_CHANGE_HERO = 11514,			    //家园房间放置伙伴
+
+    MSG_LOGIC_HOME_FISHING_BEGIN = 11515,			//家园钓鱼开始
+    MSG_LOGIC_HOME_FISHING_END = 11516,			    //家园钓鱼结束
+    MSG_LOGIC_HOME_FISHING_CHANGE_ROD = 11517,	    //家园钓鱼更换鱼竿
+    MSG_LOGIC_HOME_SAVE_HOME = 11518,               //家园一键保存
+
+    MSG_LOGIC_HOME_COOKBOOK = 11519,	            //家园食谱制作
+    MSG_LOGIC_HOME_GOODS_MOVE = 11520,	            //家园家具移动位置
+    MSG_LOGIC_HOME_ENTER = 11521,	                //家园进入房间
+    MSG_LOGIC_HOME_PUT_BACK_HERO = 11522,	        //家园伙伴收回背包
+
+    MSG_LOGIC_HOME_EXPLORE_INFO = 11523,	        //探索信息
+    MSG_LOGIC_HOME_EXPLORE_START = 11524,	        //探索开始
+    MSG_LOGIC_HOME_EXPLORE_REWARD = 11525,	        //探索结束
+    MSG_LOGIC_HOME_GARDEN_PLANT = 11526,	        //花田种植
+    MSG_LOGIC_HOME_GARDEN_OP = 11527,	            //花田操作
+    MSG_LOGIC_HOME_GARDEN_UPDATE = 11528,	        //花田更新
+
+    MSG_LOGIC_HOME_VISIT = 11530,                   //家园拜访
+    MSG_LOGIC_BANQUET_INVITE = 11531,               //宴会邀请好友
+    MSG_LOGIC_GET_BANQUET_INVITE_LIST = 11532,      //获取宴会邀请列表
+
+    MSG_LOGIC_NEW_PASS_GET_INFO = 11533,            //获取通行证信息
+    MSG_LOGIC_NEW_PASS_GET_REWARD = 11534,          //获取通行证奖励
+
+    MSG_LOGIC_HOME_VISIT_NOTIFY = 11535,            //家园拜访通知
+
+
+    //家园经验
+    MSG_LOGIC_HOME_LEVEL_INFO  = 11555,             //家园经验信息获取
+    MSG_LOGIC_HOME_GET_LEVEL_REWARD = 11556,        //家园等级奖励获取
+    MSG_LOGIC_HOME_EXP_CHANGE_NOTIFY = 11557,       //家园等级经验变动通知
+    MSG_LOGIC_HOME_BUFF_CHANGE_NOTIFY = 11558,      //家园buff变动通知
+
+    //家园温泉
+    MSG_LOGIC_HOME_HOT_SPRING_INFO = 11576,         //家园温泉信息
+    MSG_LOGIC_HOME_HOT_SPRING_CREATE = 11577,       //家园温泉开始
+    MSG_LOGIC_HOME_HOT_SPRING_INVITE = 11578,       //家园温泉邀请
+    MSG_LOGIC_HOME_HOT_SPRING_JOIN = 11579,         //家园温泉参与
+    MSG_LOGIC_HOME_HOT_SPRING_GET_REWARD = 11580,   //家园温泉领奖
+    MSG_LOGIC_HOME_HOT_SPRING_JOIN_NOTIFY = 11581,  //家园温泉参与通知
+
+    MSG_LOGIC_HOME_TOPIC_SAVE           = 11582,    //家园主题保存
+
+    MSG_LOGIC_GUILD_SAVE_DECORATE = 11600,          //社团装扮
+    MSG_LOGIC_GUILD_GET_BOSS_HURT_RANK = 11601,     //社团boss伤害排名
+    MSG_LOGIC_GUILD_SIT_BAR           = 11602,      //社团参与吧台
+    MSG_LOGIC_GUILD_GET_BAR_REWARD    = 11603,      //社团获取吧台奖励
+    MSG_LOGIC_GUILD_UNLOCK_COLLECTION = 11604,      //社团藏品解锁
+    MSG_LOGIC_GUILD_SET_DECORATE      = 11605,      //社团设置房间主题装扮
+
+    //灵符
+    MSG_LOGIC_RUNE_INFO        = 11630,             //灵符获取信息
+    MSG_LOGIC_UNLOCK_RUNE      = 11631,             //灵符解锁
+    MSG_LOGIC_RUNE_LEVEL_UP    = 11632,             //灵符升级
+
+
+    MSG_LOGIC_MAX_CMD,
+};//特别注意:LOGIC协议的ID范围: [10000 -- 11999]
+
+// 东方新协议从 15000 -- 17000 开始，避免和忍者项目合并代码时 协议冲突
+enum SERVER_CMD_LOGIC_TOUHOU_DEFINE
+{//特别注意:LOGIC协议的ID范围: [15000 -- 17000]
+    MSG_LOGIC_TOUHOU_NULL_CMD = 15000,
+
+    MSG_LOGIC_TOUHOU_HERO_HEART_GIFTS       = 15001,    // 少女好感度赠送礼物
+
+    MSG_LOGIC_TOUHOU_CARD_DIALOG            = 15006,    // 小人互动
+    MSG_LOGIC_TOUHOU_WENWEN_NEWS            = 15007,    // 文文日报
+    MSG_LOGIC_TOUHOU_GET_ADDUP_DEPOSIT_BONUS = 15008,	// 获取首次累充奖励
+
+    MSG_LOGIC_TOUHOU_GET_VIP_QUARTER_DAILY_REWARD = 15010,  // 获取VIP至尊卡每日奖励
+    MSG_LOGIC_TOUHOU_OTHER_DEPOSIT           = 15011,    // 其他方式充值领奖
+
+    MSG_LOGIC_TOUHOU_NOTIFY_BUFF            = 15019,    // 通知BUFF数据
+
+    MSG_LOGIC_TOUHOU_CHANGE_TEAM            = 15021,    // 修改队伍阵容
+    MSG_LOGIC_TOUHOU_SET_TEAM_PRESET        = 15022,    // 修改编队
+    MSG_LOGIC_TOUHOU_CHANGE_TEAM_PRESET_NAME = 15023,   // 修改编队名字
+    MSG_LOGIC_TOUHOU_CHANGE_GUILD_NAME      = 15024,    // 修改公会名字
+
+    MSG_LOGIC_TOUHOU_NOTIFY_USER_OTHER_DATA = 15026,    // 登录后通知其他数据
+    MSG_LOGIC_TOUHOU_NOTIFY_NEW_HERO_HISTORY = 15027,   // 通知新的伙伴传记数据
+    MSG_LOGIC_TOUHOU_GET_HERO_HISTORY_REWARD = 15028,   // 获取伙伴传记奖励
+
+    MSG_LOGIC_TOUHOU_RANDOM_STORE_GET_INFO  = 15029,    // 获取随机商店信息
+    MSG_LOGIC_TOUHOU_RANDOM_STORE_REFRESH   = 15030,    // 刷新随机商店
+    MSG_LOGIC_TOUHOU_RANDOM_STORE_BUY_ITEM  = 15031,    // 购买随机商店物品
+    MSG_LOGIC_TOUHOU_HEART_STORE_DIALOG     = 15032,    // 好感度商店互动
+    MSG_LOGIC_TOUHOU_RANDOM_STORE_INFO_LIST = 15033,    // 获取多个随机商店信息
+
+    MSG_LOGIC_TOUHOU_COMMON_DAILY_AWARD     = 15038,    // 通用每日奖励
+    MSG_LOGIC_TOUHOU_HERO_DATING            = 15039,    // 伙伴约会
+
+    MSG_LOGIC_TOUHOU_GET_SIMPLE_GAME_INFO   = 15041,    // 获取小游戏状态
+    MSG_LOGIC_TOUHOU_PLAY_SIMPLE_GAME       = 15042,    // 小游戏游玩
+
+    MSG_LOGIC_TOUHOU_GET_SEQUENCE_TASK_REWARD = 15052,  // 获取特殊序列任务类型任务奖励(群疗少女任务)
+    MSG_LOGIC_TOUHOU_GET_WORLD_QUEST_INFO   = 15053,    // 获取世界任务信息
+    MSG_LOGIC_TOUHOU_WORLD_QUEST_REWARD     = 15054,    // 世界任务领奖
+    MSG_LOGIC_TOUHOU_NOTIFY_QUESTIONNAIRE   = 15056,    // 问卷调查通知
+    MSG_LOGIC_TOUHOU_QUESTIONNAIRE          = 15057,    // 问卷调查
+
+    MSG_LOGIC_TOUHOU_CONSTEL_DIV            = 15060,    // 星纹分解吞噬
+    MSG_LOGIC_TOUHOU_CONSTEL_LEVEL_UP       = 15061,    // 星纹升级
+    MSG_LOGIC_TOUHOU_CONSTEL_EQUIP          = 15062,    // 星纹装备
+    MSG_LOGIC_TOUHOU_CONSTEL_ONEKEY_UNLOAD  = 15063,    // 星纹一键卸下
+    MSG_LOGIC_TOUHOU_CONSTEL_LOCK_OR_DISCARD = 15064,    // 星纹上锁或弃置
+
+    MSG_LOGIC_TOUHOU_NOTIFY_OFFLINE_MESSAGE = 15066,    // 离线消息通知
+
+    MSG_LOGIC_TOUHOU_OPEN_COMMON_RANK       = 15067,    // 打开通用排行榜
+    MSG_LOGIC_TOUHOU_GET_COMMON_RANK_SELF_INFO = 15068, // 获取通用排行榜个人信息
+
+    MSG_LOGIC_TOUHOU_NOTIFY_LIMIT_BOSS      = 15070,    // 通知新出现BOSS
+    MSG_LOGIC_TOUHOU_NOTIFY_LIMIT_BOX       = 15071,    // 通知新出现宝箱
+
+    MSG_LOGIC_LIMIT_BOSS_LEVEL_BEGIN        = 15072,    // 限时BOSS开始关卡
+    MSG_LOGIC_LIMIT_BOSS_LEVEL_RESULT       = 15073,    // 限时BOSS关卡结束
+    MSG_LOGIC_LIMIT_BOSS_INVITE             = 15074,    // 限时BOSS邀请
+    MSG_LOGIC_LIMIT_BOSS_OPEN_INVITE_LIST   = 15075,    // 限时BOSS打开邀请列表
+    MSG_LOGIC_LIMIT_BOSS_ACCEPT             = 15076,    // 限时BOSS接受邀请
+    MSG_LOGIC_LIMIT_BOSS_OPEN_LIST          = 15077,    // 限时BOSS打开BOSS列表
+    MSG_LOGIC_LIMIT_BOSS_GET_BOX            = 15078,    // 限时BOSS领取限时宝箱
+    MSG_LOGIC_NOTIFY_LIMIT_BOSS_INVITE      = 15079,    // 通知限时BOSS邀请
+    MSG_LOGIC_LIMIT_BOSS_OPEN_FRIEND_LIST   = 15080,    // 打开待邀请的好友列表
+    MSG_LOGIC_LIMIT_BOSS_REFRESH_OPEN_BOSS  = 15081,    // 限时BOSS刷新公开BOSS列表
+
+    MSG_LOGIC_CONSTEL_PRESET_SAVE           = 15100,    // 礼装预设保存
+    MSG_LOGIC_CONSTEL_PRESET_DEL            = 15101,    // 礼装预设删除
+    MSG_LOGIC_CONSTEL_PRESET_EQUIP          = 15102,    // 礼装预设装备
+    MSG_LOGIC_CONSTEL_PRESET_LIST           = 15103,    // 礼装预设列表
+
+    MSG_LOGIC_DEBUG_REFRESH_DATA            = 15104,    // debug模式刷新玩家数据
+    MSG_LOGIC_RECORD_USER_SPECIAL_GUIDE     = 15105,    // 记录除新手引导以外的特殊引导
+
+    MSG_LOGIC_RECORD_USER_BIND_EMAIL        = 15106,    // 记录玩家邮箱绑定
+    MSG_LOGIC_CHANGE_AGE_LIMIT              = 15107,    // 修改玩家充值年龄限制
+
+    MSG_LOGIC_WENWEN_CHOOSE_REWARD          = 15108,    // 报纸设置阵营
+
+    MSG_LOGIC_REFRESH_CONSTEL_SHOP          = 15130,    // 刷新念写卡商店
+    MSG_LOGIC_GET_CONSTEL_SHOP_INFO         = 15131,    // 获取念写卡商店信息
+
+    MSG_LOGIC_GET_GASHAPON_INFO             = 15142,    // 获取夏日祭活动信息
+    MSG_LOGIC_PLAY_GASHAPON                 = 15143,    // 参与夏日祭活动
+    MSG_LOGIC_PLAY_CRUSH_BOSS               = 15144,    // 参加夏日遭遇关卡
+    MSG_LOGIC_END_CRUSH_BOSS                = 15145,    // 结算夏日遭遇关卡
+    MSG_LOGIC_GET_CRUSH_BOSS_INFO           = 15146,    // 夏日遭遇关卡信息
+    MSG_LOGIC_GIVE_UP_CRUSH_BOSS            = 15147,    // 夏日遭遇放弃
+
+    MSG_LOGIC_GET_ATLAS_INFO                = 15160,    // 风土记地图信息
+    MSG_LOGIC_LEVEL_UP_ATLAS                = 15161,    // 风土记buff等级提升
+
+    MSG_LOGIC_GET_CONTROL_INFO              = 15170,    // 获取控制信息
+
+    MSG_LOGIC_TOUHOU_MAX_CMD,
+};//特别注意:LOGIC协议的ID范围: [15000 -- 17000]

@@ -1,0 +1,55 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="user_team_info_t" class_name="CRecordUserTeamInfoTable" cache_name="TUserTeamInfoTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_user_team_info_table">
+
+    <field_info desc="uid"              type="int"  field_name="uid" primary_key="true" div ="true" comment="玩家uid" />
+    <field_info desc="group_id"         type="int"  field_name="group_id" primary_key="true" comment="玩家区服" />
+	
+	<field_info desc="team_1"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_1" comment="队形1"/>
+	<field_info desc="team_2"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_2" comment="队形2"/>
+	<field_info desc="team_3"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_3" comment="队形3"/>
+	<field_info desc="team_4"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_4" comment="队形4"/>
+	<field_info desc="team_5"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_5" comment="队形5"/>
+	
+	<field_info desc="team_6"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_6" comment="队形6"/>
+	<field_info desc="team_7"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_7" comment="队形7"/>
+	<field_info desc="team_8"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_8" comment="队形8"/>
+	<field_info desc="team_9"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_9" comment="队形9"/>
+	<field_info desc="team_10"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_10" comment="队形10"/>
+	
+	<field_info desc="team_11"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_11" comment="队形11"/>
+	<field_info desc="team_12"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_12" comment="队形12"/>
+	<field_info desc="team_13"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_13" comment="队形13"/>
+	<field_info desc="team_14"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_14" comment="队形14"/>
+	<field_info desc="team_15"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_15" comment="队形15"/>
+	
+	<field_info desc="team_16"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_16" comment="队形16"/>
+	<field_info desc="team_17"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_17" comment="队形17"/>
+	<field_info desc="team_18"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_18" comment="队形18"/>
+	<field_info desc="team_19"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_19" comment="队形19"/>
+	<field_info desc="team_20"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_20" comment="队形20"/>
+	
+	<field_info desc="team_21"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_21" comment="队形21"/>
+	<field_info desc="team_22"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_22" comment="队形22"/>
+	<field_info desc="team_23"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_23" comment="队形23"/>
+	<field_info desc="team_24"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_24" comment="队形24"/>
+	<field_info desc="team_25"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_25" comment="队形25"/>
+	
+	<field_info desc="team_26"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_26" comment="队形26"/>
+	<field_info desc="team_27"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_27" comment="队形27"/>
+	<field_info desc="team_28"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_28" comment="队形28"/>
+	<field_info desc="team_29"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_29" comment="队形29"/>
+	<field_info desc="team_30"     type="userdata"  class="CPackCardTeam" size="200" field_name="team_30" comment="队形30"/>
+	
+</table_info>

@@ -1,0 +1,16 @@
+<table_info table_name="score_level_info_t" class_name="CRecordScoreLevelInfoTable" cache_name="TScoreLevelInfoTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_score_level_info_table">
+
+    <field_info desc="uid"                  type="int" field_name="uid" primary_key="true" div ="true" comment="玩家uid" />	
+    <field_info desc="group_id"             type="int" field_name="group_id" primary_key="true" comment="玩家区服" />
+    <field_info desc="activity_id"          type="int" field_name="activity_id" primary_key="true" comment="活动id" />
+	<field_info desc="xingdongli"           type="int" field_name="xingdongli" comment="行动力" />
+	<field_info desc="last_xingdongli_time" type="int" field_name="last_xingdongli_time" comment="上次恢复行动力时间" />
+	<field_info desc="buy_xingdongli_count" type="int" field_name="buy_xingdongli_count" comment="购买行动力次数" />
+    <field_info desc="score"                type="int" field_name="score" comment="积分" />
+	<field_info desc="score_award_bitmap"   type="uint64_t" field_name="score_award_bitmap" unsigned="true" comment="积分奖励状态" />
+	<field_info desc="deposit_award_bitmap" type="uint64_t" field_name="deposit_award_bitmap" unsigned="true" comment="积分奖励状态" />
+    <field_info desc="score_level_bitmap"   type="uint64_t" field_name="score_level_bitmap" unsigned="true" comment="积分关卡挑战" />
+    <field_info desc="challenge_level_bitmap"   type="uint64_t" field_name="challenge_level_bitmap" unsigned="true" comment="积分关卡挑战" />
+</table_info>

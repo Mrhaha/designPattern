@@ -1,0 +1,22 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="user_uin_t" class_name="CRecordUserUinTable" cache_name="TUserUinTable"
+    div_num ="0" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_user_uin_table">
+
+    <field_info desc="uid"          type="int" field_name="uid" primary_key="true" increment="10000" comment="玩家唯一uid" />
+    <field_info desc="account"      type="std::string" field_name="account" unique="true" size="128" comment="玩家账号" />
+    <field_info desc="pwd"          type="std::string" field_name="pwd" size="32" comment="玩家账号" />
+    <field_info desc="platform"     type="std::string" field_name="platform" size="32" comment="玩家平台" />
+    <field_info desc="os"           type="std::string" field_name="os" size="32" comment="系统" />
+
+</table_info>

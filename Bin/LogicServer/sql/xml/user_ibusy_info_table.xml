@@ -1,0 +1,142 @@
+<table_info table_name="user_ibusy_info_t" class_name="CRecordUserIBusyInfoTable" cache_name="TUserIbusyInfoTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_user_ibusy_info_table">
+
+    <field_info desc="uid"                  type="int" field_name="uid" primary_key="true" div ="true" comment="玩家uid" />	
+    <field_info desc="group_id"             type="int" field_name="group_id" primary_key="true" comment="玩家区服" />
+    <field_info desc="activity_id"         type="int" field_name="activity_id" comment="活动id" />
+    <field_info desc="level"        type="int" field_name="level" comment="官邸等级" />
+    <field_info desc="exp"  type="int" field_name="exp" comment="官邸经验" />
+	<field_info desc="daily_exp_award"    type="int" field_name="daily_exp_award" comment="每日充值经验奖励状态" />
+    <field_info desc="score"    type="int" field_name="score" comment="积分" />
+    <field_info desc="explore_exp"   type="int" field_name="explore_exp" comment="家园探索等级经验" />
+    <field_info desc="today_huoyue"    type="int" field_name="today_huoyue" comment="今天活跃度" />
+    <field_info desc="change_task_count"      type="int" field_name="change_task_count" comment="更新任务次数" />
+    <field_info desc="free_change_task_count"      type="int" field_name="free_change_task_count" comment="免费更新任务次数" />
+    <field_info desc="market_last_refresh_time"     type="int" field_name="market_last_refresh_time" comment="商店上次更新时间" />
+    <field_info desc="market_refresh_times"     type="int" field_name="market_refresh_times" comment="商店已更新次数" />
+    <field_info desc="getted_level_reward"     type="userdata"  class="std::set<int>" size="200" field_name="getted_level_reward" comment="已领取的等级任务" />
+	<field_info desc="getted_deposit_reward"     type="userdata"  class="std::set<int>" size="200" field_name="getted_deposit_reward" comment="已领取的充值等级任务" />
+    <field_info desc="task_info"     type="userdata"  field_name="task_info" class="CPackIbusyTaskData" size="256" comment="任务信息" />
+	<field_info desc="special_gift_week_id"     type="int"  field_name="special_gift_week_id" 		comment="特权周礼活动ID" />
+	<field_info desc="special_gift_week_level" 	type="int"  field_name="special_gift_week_level" 	comment="特权周礼玩家等级" />
+	<field_info desc="special_gift_month_id"    type="int"  field_name="special_gift_month_id" 		comment="特权月礼活动ID" />
+	<field_info desc="special_gift_month_level"	type="int"  field_name="special_gift_month_level" 	comment="特权月礼玩家等级" />
+	
+	<field_info desc="lucky_hammer_activity_id"	type="int"  field_name="lucky_hammer_activity_id" default="0"	comment="幸运魔锤活动ID" />
+	<field_info desc="lucky_hammer_lottery_count"	type="int"  field_name="lucky_hammer_lottery_count" default="0"	comment="幸运魔锤抽取次数" />
+	
+	<field_info desc="month_pass_exp"	type="int"  field_name="month_pass_exp" default="0"	comment="月通行证经验" />
+	<field_info desc="month_pass_day"	type="int"  field_name="month_pass_day" default="0"	comment="月通行证第几天" />
+	<field_info desc="month_pass_recharge"	type="int"  field_name="month_pass_recharge" default="0"	comment="月通行证充值数额" />
+	<field_info desc="month_pass_award_bitmap"	type="std::string" field_name="month_pass_award_bitmap" size="256"	comment="月通行证等级奖励状态" />
+	<field_info desc="month_pass_deposit_award_bitmap"	type="std::string" field_name="month_pass_deposit_award_bitmap" size="256"	comment="月通行证充值等级奖励状态" />
+	<field_info desc="month_pass_wish_event_id"	type="int"  field_name="month_pass_wish_event_id" default="0"	comment="月通行证许愿事件ID" />
+	<field_info desc="month_pass_wish_item_index"	type="userdata"  field_name="month_pass_wish_item_index" class="std::vector<int>" size="256"	comment="月通行证许愿的道具索引" />
+	
+	<field_info desc="card_dialog_limit_avy_stat"   type="userdata"  field_name="card_dialog_limit_avy_stat" class="std::vector<int32_t>" size="255" comment="小人互动，限时活动领取奖励状态"/>
+	<field_info desc="card_dialog_next_time"	type="int"  field_name="card_dialog_next_time" default="0"	comment="小人互动，下次可互动时间"/>
+	<field_info desc="card_dialog_times"	type="int"  field_name="card_dialog_times" default="0"	comment="小人互动，已互动次数"/>
+	
+	<field_info desc="news_last_time"	type="int"  field_name="news_last_time" default="0"	comment="文文日报，上次刷新时间"/>
+	<field_info desc="news_last_data"	type="int"  field_name="news_last_data" default="0"	comment="文文日报，上次刷新数据"/>
+	
+	<field_info desc="addup_deposit_bonus"	type="int"  field_name="addup_deposit_bonus" default="0"	comment="首次累充奖励领取状态"/>
+	<field_info desc="foundation_open_time"	type="int"  field_name="foundation_open_time" default="0"	comment="成长计划开启时间"/>
+	<field_info desc="once_event_stat"      type="uint64_t"  field_name="once_event_stat" unsigned="true" default="0" comment="一次性事件标记"/>
+	
+	<field_info desc="random_store_refresh_data" type="userdata" class="std::map<int32_t, std::pair<int32_t, int32_t>>" size="256" field_name="random_store_refresh_data" comment="随机商店刷新时间和刷新次数"/>
+	<field_info desc="simple_game_point"     type="userdata"  field_name="simple_game_point" class="std::map<uint8_t, int32_t>" size="256" comment="小游戏分数"/>
+	<field_info desc="heart_insure_open_time"	type="int"  field_name="heart_insure_open_time" default="0"	comment="好感度基金开启时间"/>
+	<field_info desc="moon_map_skill_level"     type="userdata"  field_name="moon_map_skill_level" class="std::map<int32_t, int32_t>" size="256" comment="月球远征地图技能等级"/>
+	<field_info desc="red_bag_unique_index"     type="userdata" class="CVecBitmap" size="100" field_name="red_bag_unique_index" comment="红包唯一标识记录"/>
+	<field_info desc="world_quest_reward_state" type="userdata" class="CVecBitmap" size="64" field_name="world_quest_reward_state" comment="世界任务领奖记录"/>
+	<field_info desc="world_quest_reward_times"	type="int"  field_name="world_quest_reward_times" default="0"	comment="世界任务领奖次数保底"/>
+	
+	<field_info desc="questionnaire_state"     		type="userdata" class="CVecBitmap" size="64" field_name="questionnaire_state" comment="问卷调查答题状态"/>
+	<field_info desc="questionnaire_duration_time"  type="userdata" class="std::map<int32_t, int32_t>" size="256" field_name="questionnaire_duration_time" comment="问卷调查过期时间"/>
+	
+	<field_info desc="limit_boss_accepted"  type="userdata" class="std::map<int32_t, int32_t>" size="512" field_name="limit_boss_accepted" comment="已接受限时BOSS"/>
+	<field_info desc="limit_boss_rand"  	type="userdata" class="std::map<int32_t, int32_t>" size="512" field_name="limit_boss_rand" comment="已随机到限时BOSS"/>
+	<field_info desc="limit_box_time"		type="int"  field_name="limit_box_time" default="0"	comment="限时宝箱持续时间"/>
+	
+	<field_info desc="total_heart_level" 	type="int"  field_name="total_heart_level" 	default="1" comment="总好感度等级"/>
+    <field_info desc="total_heart_exp" 		type="int"  field_name="total_heart_exp" 	default="0"	comment="总好感度经验"/>
+	
+	<field_info desc="constel_exp_pool" 	type="int"  field_name="constel_exp_pool" 	default="0"	comment="星纹经验池"/>
+	<field_info desc="fishing_rod" 			type="int"  field_name="fishing_rod" 	default="0"	comment="当前鱼竿"/>
+	<field_info desc="main_bgm"  	type="userdata" class="std::list<int32_t>" size="1024" field_name="main_bgm" comment="主城背景音乐"/>
+	<field_info desc="home_bgm"  	type="userdata" class="std::list<int32_t>" size="1024" field_name="home_bgm" comment="家园背景音乐"/>
+	<field_info desc="mall_baodi_times" 	type="int"  field_name="mall_baodi_times" 	default="0"	comment="卡池全局保底次数"/>
+	
+	<field_info desc="zhu_hai_level" 	type="int"  field_name="zhu_hai_level" 	default="0"	comment="竹海难度"/>
+	<field_info desc="zhu_hai_gress" 	type="int"  field_name="zhu_hai_gress" 	default="0"	comment="竹海进度"/>
+	<field_info desc="zhu_hai_buff"  	type="userdata" class="std::vector<int>" size="256" field_name="zhu_hai_buff" comment="竹海BUFF列表"/>
+	<field_info desc="zhu_hai_card_hp"  type="userdata" class="std::map<int, int>" size="256" field_name="zhu_hai_card_hp" comment="竹海伙伴血量"/>
+	<field_info desc="zhu_hai_bless_group"  type="userdata" class="std::map<int, CPackZhuHaiBlessInfo>" size="256" field_name="zhu_hai_bless_group" comment="竹海祝福列表"/>
+	<field_info desc="zhu_hai_role_buff"  	type="userdata" class="std::map<int,std::vector<int>>" size="256" field_name="zhu_hai_role_buff" comment="竹海角色BUFF列表"/>
+	<field_info desc="zhu_hai_refresh_store" 	type="int"  field_name="zhu_hai_refresh_store" 	default="0"	comment="竹海商店刷新次数"/>
+	<field_info desc="zhu_hai_save_team_flag" 	type="char"  field_name="zhu_hai_save_team_flag" 	default="0"	comment="竹海队伍保存标志"/>
+	
+	
+	
+	<field_info desc="guild_boss_hurt"  type="userdata" class="std::map<int, uint64_t>" size="256" field_name="guild_boss_hurt" comment="公会BOSS最大伤害记录"/>
+	
+	<field_info desc="wish_last_time" 	type="int"  field_name="wish_last_time" default="0"	comment="上次祈愿时间"/>
+	<field_info desc="wish_card_id" 	type="int"  field_name="wish_card_id" default="0"	comment="祈愿伙伴ID"/>
+	<field_info desc="wish_num" 		type="int"  field_name="wish_num" default="0"	comment="祈愿已获得数量"/>
+	<field_info desc="wish_reward_vec" 	type="userdata" class="std::vector<std::pair<std::string, int>>" size="1024" field_name="wish_reward_vec" comment="祈愿待领取记录"/>
+	<field_info desc="wish_swap_card"  	type="userdata" class="std::vector<int>" size="256" field_name="wish_swap_card" comment="祈愿可交换伙伴列表"/>
+	
+	<field_info desc="badge_list"  		type="userdata" class="std::vector<int>" size="256" field_name="badge_list" comment="徽章墙"/>
+	
+	<field_info desc="new_limit_boss_reward"  	type="userdata" class="std::map<int32_t,std::vector<CPackLimitBossTeamInfo>>" size="2048" field_name="new_limit_boss_reward" comment="待领取的限时boss奖励"/>
+	<field_info desc="new_limit_boss_daily_count"  	type="int" field_name="new_limit_boss_daily_count" default="0" comment="每日领取奖励总次数"/>
+	
+	<field_info desc="daily_guild_donate"    type="char"  field_name="daily_guild_donate" default="0" comment="今日是否公会捐献" />
+	<field_info desc="daily_guild_sign" type="char" field_name="daily_guild_sign" default = "0" comment="今日公会是否签到" />
+	<field_info desc="daily_guild_random_count" type="int" field_name="daily_guild_random_count" default = "0" comment="今日公会随机事件次数" />
+	<field_info desc="daily_guild_random" type="userdata" field_name="daily_guild_random" class="CPackGuildRandomInfo" size="256" comment="公会随机事件信息"/>
+	<field_info desc="daily_guild_bar"    type="char"  field_name="daily_guild_bar" default="0" comment="今日是否公会吧台" />
+	<field_info desc="wenwen_choose"    type="char"  field_name="wenwen_choose" default="0" comment="报纸奖励选择" />
+	<field_info desc="constel_adv_times" 		type="int"  field_name="constel_adv_times" default="0"	comment="念写卡副本高额奖励次数"/>
+	<field_info desc="guild_fragment_history" 		type="userdata"  field_name="guild_fragment_history" default="0"	class="std::vector<CPackGuildFragmentsHistory>" size="8192" comment="公会碎片记录"/>
+	
+
+	<field_info desc="home_exp_tag" type="userdata" field_name="home_exp_tag" class="std::map<int,bool>" size="1024" comment="家园经验获取标记"/> 
+
+
+	<field_info desc="rune_info" type="userdata" field_name="rune_info" class="std::map<int,CPackRuneInfo>" size="256" comment="灵符信息"/> 
+	<field_info desc="constel_put_info" type="userdata" field_name="constel_put_info" class="std::map<int,map<int,char>>" size="4096" comment="装备念写卡信息"/> 
+	
+	<field_info desc="data_change_tag"    type="char"  field_name="data_change_tag" default="0" comment="数据转化标记" />
+	<field_info desc="cbt_reward_tag"    type="char"  field_name="cbt_reward_tag" default="0" comment="CBT奖励领取标记" />
+	
+	<field_info desc="constel_shop"  type="userdata" class="std::vector<CPackConstelShopInfo>" size="256" field_name="constel_shop" comment="念写卡商店"/>
+	<field_info desc="constel_shop_refresh_count"  type="int"  field_name="constel_shop_refresh_count" default="0"	comment="念写卡商店每日刷新次数"/>
+	<field_info desc="constel_shop_last_time"  type="int"  field_name="constel_shop_last_time" default="0"	comment="念写卡商店上次刷新时间"/>
+	<field_info desc="cheating_count"  type="int"  field_name="cheating_count" default="0"	comment="作弊次数"/>
+	
+
+    <field_info desc="gashapon_info"  type="userdata" class="std::map<int32_t,std::map<int32_t,CPackGashaponInfo>>" size="2048" field_name="gashapon_info" comment="念写卡商店"/>
+	<field_info desc="crush_boss_level"    type="int"  field_name="crush_boss_level" default="0" comment="夏日活动遭遇标记" />
+	<field_info desc="crush_boss_info"    type="userdata" class="CPackCrushBossInfo"  field_name="crush_boss_info" size="256" comment="夏日Boss记录" />
+	<field_info desc="crush_boss_count"    type="int"  field_name="crush_boss_count" default="0" comment="夏日Boss关卡保底次数" />
+	
+	
+	<field_info desc="home_buff_id"   type="userdata"  class="std::map<int32_t,CPackHomeGoodsBuffEffect>"  field_name="home_buff_id" size="512" comment="家园buff" />
+	<field_info desc="start_level_time"    type="int"  field_name="start_level_time" default="0" comment="开始关卡时间戳" />
+
+    <field_info desc="atlas_buff_info"  type="userdata" class="std::map<int32_t,int32_t>" size="512" field_name="atlas_buff_info" comment="风土记地区buff等级"/>
+	
+	<field_info desc="daily_guild_war_time"    type="char"  field_name="daily_guild_war_time" default="0" comment="今日公会战次数" />
+    <field_info desc="guild_war_use_card"  type="userdata" class="std::map<int32_t,char>" size="1024" field_name="guild_war_use_card" comment="公会战已使用的card"/>
+    <field_info desc="guild_self_info"  type="userdata" class="std::map<int32_t,CPackGuildWarSelfInfo>" size="2048" field_name="guild_self_info" comment="公会战战斗信息"/>
+    <field_info desc="guild_war_cal_info"  type="userdata" class="CPackGuildWarSelfRankInfo" size="2048" field_name="guild_war_cal_info" comment="最近一次公会战结算信息"/>
+
+	<field_info desc="limit_boss_baodi_time"    type="int"  field_name="limit_boss_baodi_time" default="0" comment="限时boss保底次数" />
+	
+	
+	
+
+</table_info>

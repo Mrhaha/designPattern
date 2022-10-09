@@ -1,0 +1,67 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="hero_card_info_t" class_name="CRecordHeroCardInfoTable" cache_name="THeroCardInfoTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_hero_card_info_table">
+
+    <field_info desc="uid" type="int"  field_name="uid" primary_key="true" div ="true" comment="玩家uid" />	
+    <field_info desc="group_id" type="int"  field_name="group_id" primary_key="true" comment="玩家区服" />
+    <field_info desc="card_id" type="int"  field_name="card_id" primary_key="true" comment="卡片ID" />
+    <field_info desc="card_color" type="char" field_name="card_color" default="1" comment="颜色" />
+    <field_info desc="card_star" type="char" field_name="card_star" comment="星级" />
+
+	<field_info desc="fashion_id" 	type="int"  field_name="fashion_id" comment="装备时装" />
+    <field_info desc="card_time" 	type="int"  field_name="card_time" comment="时间" />
+    <field_info desc="card_level" 	type="int"  field_name="card_level" comment="等级" />
+    <field_info desc="card_exp" 	type="int"  field_name="card_exp" comment="经验" />
+    <field_info desc="cross_fight_cost_hp" type="int" field_name="cross_fight_cost_hp" comment="过关斩将消耗hp百分比" />
+    <field_info desc="qiyu_fight_cost_hp" type="int" field_name="qiyu_fight_cost_hp" comment="奇遇消耗hp百分比" />
+    <field_info desc="cangbaotu_fight_cost_hp" type="int" field_name="cangbaotu_fight_cost_hp" comment="藏宝图消耗hp百分比" />
+
+    <field_info desc="upgrade_color_1" type="int" field_name="upgrade_color_1" default="0" comment="卡牌装备镶嵌1" />
+    <field_info desc="upgrade_color_2" type="int" field_name="upgrade_color_2" default="0" comment="卡牌装备镶嵌2" />
+    <field_info desc="upgrade_color_3" type="int" field_name="upgrade_color_3" default="0" comment="卡牌装备镶嵌3" />
+    <field_info desc="upgrade_color_4" type="int" field_name="upgrade_color_4" default="0" comment="卡牌装备镶嵌4" />
+	
+	<field_info desc="fight_power" 		type="int" field_name="fight_power" 	default="0" comment="战斗力" />
+	<field_info desc="fight_hp" 		type="int" field_name="fight_hp" 		default="0" comment="血" />
+	
+	<field_info desc="heart_level" 		type="int"  field_name="heart_level" 	default="1" comment="好感度等级" />
+    <field_info desc="heart_exp" 		type="int"  field_name="heart_exp" 		default="0"	comment="好感度经验" />
+	<field_info desc="daily_gift_num" 	type="int"  field_name="daily_gift_num" default="0"	comment="好感度每日获赠礼物数量" />
+	<field_info desc="last_gift_time" 	type="int"  field_name="last_gift_time" default="0"	comment="上次赠礼物时间" />
+	<field_info desc="heart_gift_level"	type="int"  field_name="heart_gift_level" default="0"	comment="好感度已领奖等级"/>
+	<field_info desc="grade_level" 		type="int"  field_name="grade_level" 	default="0"	comment="SSR进阶等级" />
+	<field_info desc="dating_times" 	type="int"  field_name="dating_times" 	default="0"	comment="约会次数" />
+	<field_info desc="impression"     	type="userdata"  field_name="impression" class="std::vector<int>" size="64" comment="伙伴印象分"/>
+	
+	<field_info desc="equip_constellation_1" type="int" field_name="equip_constellation_1" default="0" comment="装备星纹1"/>
+    <field_info desc="equip_constellation_2" type="int" field_name="equip_constellation_2" default="0" comment="装备星纹2"/>
+    <field_info desc="equip_constellation_3" type="int" field_name="equip_constellation_3" default="0" comment="装备星纹3"/>
+    <field_info desc="equip_constellation_4" type="int" field_name="equip_constellation_4" default="0" comment="装备星纹4"/>
+	
+	<field_info desc="equip_1" type="int" field_name="equip_1" default="0" comment="装备1"/>
+    <field_info desc="equip_2" type="int" field_name="equip_2" default="0" comment="装备2"/>
+    <field_info desc="equip_3" type="int" field_name="equip_3" default="0" comment="装备3"/>
+    <field_info desc="equip_4" type="int" field_name="equip_4" default="0" comment="装备4"/>
+	
+	<field_info desc="talent_point" type="int" field_name="talent_point" default="0" comment="天赋点数"/>
+	<field_info desc="talent_point_1" type="int" field_name="talent_point_1" default="0" comment="天赋点数一"/>
+	
+	<field_info desc="talent_total_consume" type="int" field_name="talent_total_consume" default="0" comment="已消耗天赋点数"/>
+	<field_info desc="talent_map" 	type="userdata"  field_name="talent_map" class="std::map<int, int>" size="512" comment="伙伴天赋"/>
+	<field_info desc="pass_level" 	type="userdata"  field_name="pass_level" class="std::map<int, bool>" size="4096" comment="通关关卡ID"/>
+	<field_info desc="use_skill_count" type="int" field_name="use_skill_count" default="0" comment="释放奥义次数"/>
+	
+
+
+</table_info>

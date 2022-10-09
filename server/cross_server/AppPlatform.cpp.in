@@ -1,0 +1,16 @@
+#include "AppPlatform.h"
+#include "common_platform.h"
+
+#define GIT_SHA1 "@GIT_SHA1@"
+const char g_GIT_SHA1[] = GIT_SHA1;
+
+const char g_BUILD_DATE[] = __DATE__;
+const char g_BUILD_TIME[] = __TIME__;
+
+std::string get_build_info()
+{
+	std::stringstream ss;
+	ss << get_platform_info<CROSS_BUILD_PLATFORM>().c_str() << " build git@" << g_GIT_SHA1 << " in " << g_BUILD_DATE << " " << g_BUILD_TIME;
+	return ss.str();
+}
+

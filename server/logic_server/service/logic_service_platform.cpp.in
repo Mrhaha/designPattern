@@ -1,0 +1,14 @@
+#include "logic_service_platform.h"
+#include "common_platform.h"
+
+#define SERVER_GIT_SHA1 "@GIT_SHA1@"
+const char g_szServerGitSha1[] = SERVER_GIT_SHA1;
+const char g_szServerBuildDate[] = __DATE__;
+const char g_szServerBuildTime[] = __TIME__;
+
+std::string get_build_info()
+{
+	std::stringstream ss;
+	ss << get_platform_info<LOGIC_BUILD_PLATFORM>().c_str() << " build git@" << g_szServerGitSha1 << " in " << g_szServerBuildDate << " " << g_szServerBuildTime;
+	return ss.str();
+}

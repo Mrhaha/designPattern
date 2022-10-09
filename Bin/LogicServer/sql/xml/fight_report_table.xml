@@ -1,0 +1,23 @@
+<!--
+
+该表存储的战报同时被三者拥有，使用时请注意
+① uid>0&group_id=0  该战报从属于公会，并且uid为公会ID
+② uid=0&group_id>0  该战报从属于全服
+③ uid>0&group_id>0  该战报从属于个人
+-->
+
+<table_info table_name="fight_report_t" class_name="CRecordFightReportTable" cache_name="TFightReportTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_fight_report_table">
+
+    <field_info desc="uid" 			type="int"  field_name="uid" primary_key="true" div ="true" comment="玩家uid" />	
+    <field_info desc="group_id" 	type="int"  field_name="group_id" primary_key="true" comment="玩家区服" />
+    <field_info desc="report_type" 	type="int"  field_name="report_type" primary_key="true" comment="战报类型" />
+    <field_info desc="report_id" 	type="int"  field_name="report_id" primary_key="true" comment="战报id(UTC时间)" />
+	
+    <field_info desc="report_content"       type="std::string"  field_name="report_content" size="1024" comment="战报内容1024" />
+    <field_info desc="fight_result" 		type="char"  field_name="fight_result" comment="1:胜利 0:失败" />
+	<field_info desc="params"    			type="userdata"  field_name="params" class="std::vector<int32_t>" size="256" comment="参数" />
+    
+
+</table_info>

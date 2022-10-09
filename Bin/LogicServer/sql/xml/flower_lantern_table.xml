@@ -1,0 +1,28 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+-->
+
+<table_info table_name="flower_lantern_t" class_name="CRecordFlowerLanternTable" cache_name="TFlowerLanternTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_flower_lantern_table">
+
+    <field_info desc="uid"          type="int"  field_name="uid" primary_key="true" div ="true" comment="玩家uid" />	
+    <field_info desc="group_id"     type="int"  field_name="group_id" primary_key="true" comment="玩家区服" />
+    <field_info desc="log_index"    type="int"  field_name="log_index" primary_key="true" comment="日志index" />
+     
+	<field_info desc="log_time"   	type="int" field_name="log_time" comment="日志时间" />
+	<field_info desc="activity_id"  type="int" field_name="activity_id" comment="活动ID" />
+    <field_info desc="event"   		type="int" field_name="event" comment="时间" />
+	<field_info desc="event_value"  type="int" field_name="event_value" comment="事件数值" />
+    <field_info desc="candle"  		type="int" field_name="candle" comment="单次获得蜡烛" />
+	<field_info desc="total_value"  type="int" field_name="total_value" comment="累计事件数值" />
+	<field_info desc="total_candle" type="int" field_name="total_candle" comment="累计事件蜡烛" />
+
+</table_info>

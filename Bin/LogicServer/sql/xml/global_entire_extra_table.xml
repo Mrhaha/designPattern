@@ -1,0 +1,16 @@
+<table_info table_name="global_entire_extra_t" class_name="CRecordGlobalEntireExtraTable" cache_name="TGlobalEntireExtraTable"
+    div_num ="0" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_global_entire_extra_table">
+
+    <field_info desc="server_id"    		type="int"  field_name="server_id" primary_key="true" where="true" comment="服务器ID"/>
+    <field_info desc="war_id"               type="int" field_name="war_id" primary_key="true" comment="战役ID" />
+    <field_info desc="extra_id"             type="int" field_name="extra_id" primary_key="true" comment="额外ID" />
+	
+    <field_info desc="commodity_item_type"  type="int" field_name="commodity_item_type" comment="道具类型" />
+    <field_info desc="commodity_item_id"    type="int" field_name="commodity_item_id" comment="道具id" />
+    <field_info desc="commodity_item_num"   type="int" field_name="commodity_item_num" comment="道具数量" />
+    <field_info desc="consume_item_type"    type="int" field_name="consume_item_type" comment="消费物品类型" />
+    <field_info desc="consume_item_id"      type="int" field_name="consume_item_id" comment="消费物品id" />
+    <field_info desc="consume_item_num"     type="int" field_name="consume_item_num" comment="消费物品数量" />
+    <field_info desc="discount"             type="int" field_name="discount" comment="折扣或权值" />
+</table_info>

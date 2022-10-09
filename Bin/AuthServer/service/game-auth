@@ -1,0 +1,67 @@
+#! /bin/sh
+#
+# chkconfig: - 85 15
+# description: yqdmx auth server
+# 启动时进程会更新pid文件
+
+RETVAL=0
+
+ulimit -c unlimited
+ulimit -n 65535
+
+AUTH_PATH=/opt/AuthServer
+AUTH_SVR=${AUTH_PATH}/authdbsvrd
+
+check_status()
+{
+    echo ${AUTH_SVR}
+    ${AUTH_SVR} -v
+    count=`ps -ef|grep "${AUTH_SVR}" | grep -v grep |wc -l`
+    if [ $count -gt 0 ]; then
+        echo "start"
+        ps -ef|grep "${AUTH_SVR}" | grep -v grep | awk '{print $5}'
+    else
+        echo "stop"
+        echo "0"
+    fi
+}
+
+case "$1" in
+    start)
+        echo -n "Starting Auth server... "
+        cd $AUTH_PATH
+        chmod a+x $AUTH_SVR
+        $AUTH_SVR -d
+        RETVAL=$?
+        echo "done"
+        ;;
+    stop)
+        echo -n "Shutting down AuthDB server... "
+        kill -USR2 `ps -ef|grep "${AUTH_SVR}" |grep -v grep | awk '{print $2}'`
+        RETVAL=$?
+        echo "done"
+        ;;
+    reload)
+        echo -n "Reloading AuthDB server... "
+        kill -USR1 `ps -ef|grep "${AUTH_SVR}" |grep -v grep | awk '{print $2}'`
+        RETVAL=$?
+        echo "done"
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        RETVAL=$?
+        ;;
+    status)
+        chmod a+x ${AUTH_SVR}
+        check_status
+        RETVAL=$?
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|reload|status}"
+        exit 1
+        ;;
+esac
+
+exit $RETVAL

@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{44d13275-b427-42e8-8fea-b25dcac706da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="session_key">
+      <UniqueIdentifier>{c5a6f55b-305c-4425-ae45-15a04355512f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{061f1379-f2cd-4d99-ba6b-0b82df5d0be9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="zookeeper">
+      <UniqueIdentifier>{43a0d290-9ae1-4812-91a1-efdc819d9ec2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logicso">
+      <UniqueIdentifier>{d81c2929-c533-4b66-8bb6-f696f9000ce4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol">
+      <UniqueIdentifier>{25ec4a63-62bb-415b-a98f-309d67d2ff04}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\library\common\CMakeLists.txt">
+      <Filter>common</Filter>
+    </Text>
+    <Text Include="..\..\library\zookeeper\CMakeLists.txt">
+      <Filter>zookeeper</Filter>
+    </Text>
+    <Text Include="..\..\library\util\CMakeLists.txt">
+      <Filter>util</Filter>
+    </Text>
+    <Text Include="..\..\library\session_key\CMakeLists.txt">
+      <Filter>session_key</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\library\common\common_codeengine.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_codequeue.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_config.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_datetime.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_entity.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_flag.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_fmtstring.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_ipv4.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_log_utility.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_logengine.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_memory.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_msg_head_client.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_msg_head_connector.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_msg_head_cross.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_msg_head_head.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_mysql.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_object.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_platform.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_tinyxml2.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_tools.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\common\common_utf8handle.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\zookeeper\hashtable.c">
+      <Filter>zookeeper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\zookeeper\hashtable_itr.c">
+      <Filter>zookeeper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\zookeeper\recordio.c">
+      <Filter>zookeeper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\zookeeper\st_adaptor.c">
+      <Filter>zookeeper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\zookeeper\zk_hashtable.c">
+      <Filter>zookeeper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\zookeeper\zk_log.c">
+      <Filter>zookeeper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\zookeeper\zookeeper.c">
+      <Filter>zookeeper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\zookeeper\zookeeper.jute.c">
+      <Filter>zookeeper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\Markup.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_base64.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_common.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_epoller.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_ex.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_file.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_logger.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_md5.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_mysql.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_random.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_server_base.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_thread.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_thread_cond.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_thread_mutex.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_thread_pool.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_timeprovider.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_utf8.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\util\tc_uuid.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\session_key\gy_session_creator.cpp">
+      <Filter>session_key</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\library\session_key\gy_xtea.cpp">
+      <Filter>session_key</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\common\common_base.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_codeengine.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_codequeue.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_config.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_datetime.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_entity.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_flag.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_fmtstring.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_ipv4.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_log_utility.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_logengine.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_memory.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_message.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_msg_head_admin.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_msg_head_client.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_msg_head_connector.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_msg_head_cross.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_mysql.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_object.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_platform.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_singleton.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_socket.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_str2num.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_tcp_connection.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_tinyxml2.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_tools.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\common_utf8handle.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\logicso\i_logic_connector_sender.h">
+      <Filter>logicso</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\logicso\i_logic_service_api.h">
+      <Filter>logicso</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\logicso\i_logic_statistics.h">
+      <Filter>logicso</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\logicso\i_logic_tcpconnection.h">
+      <Filter>logicso</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\logicso\logicso_define.h">
+      <Filter>logicso</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\logicso\logicso_game_api.h">
+      <Filter>logicso</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\logicso\logicso_link.h">
+      <Filter>logicso</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_active_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_admin_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_award_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_base_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_card_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_cmd_admin_define.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_cmd_cross_define.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_cmd_extend_define.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_cmd_logic_define.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_common_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_cross_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_entire_war_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_errcode.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_fashion_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_fight_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_friend_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_game_item_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_guild_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_home_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_ibusy_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_item_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_pet_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_pvp_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_qiyu_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_recovery_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_role_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_score_level_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_tactics_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_task_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_theme_activity_charge_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_user_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol\server_xuyuanqingdian_protocol.h">
+      <Filter>protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\config.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\hashtable.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\hashtable_itr.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\hashtable_private.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\proto.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\recordio.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\zk_adaptor.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\zk_hashtable.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\zookeeper.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\zookeeper.jute.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\zookeeper_log.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\zookeeper\zookeeper_version.h">
+      <Filter>zookeeper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\atomic_asm.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\Markup.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_atomic.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_autoptr.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_base64.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_common.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_epoller.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_ex.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_file.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_functor.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_lock.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_logger.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_loki.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_md5.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_monitor.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_mysql.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_random.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_server_base.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_singleton.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_skiplist.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_thread.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_thread_cond.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_thread_mutex.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_thread_pool.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_thread_queue.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_timeprovider.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_timer.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_utf8.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\util\tc_uuid.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\session_key\gy_session_creator.h">
+      <Filter>session_key</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\session_key\gy_xtea.h">
+      <Filter>session_key</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\library\zookeeper\Makefile">
+      <Filter>zookeeper</Filter>
+    </None>
+    <None Include="..\..\library\util\Makefile">
+      <Filter>util</Filter>
+    </None>
+  </ItemGroup>
+</Project>

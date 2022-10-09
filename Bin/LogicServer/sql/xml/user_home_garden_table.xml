@@ -1,0 +1,26 @@
+<!--
+
+div_num             数据库分表, 如果为 0 表示不分表
+field_name          必须使用以 '_' 分割单词的方式命名, 可以只有一个单词
+storage_instance    托管的位置, 同步写和缓写两种单例
+primary_key="true"  主键标示
+binary="true"       msgpack 标示
+div                 表示以当前变量作为分表的依据
+
+global              表示数据是全局数据, 不是用户数据, 在 select 的时候有差异
+
+-->
+
+<table_info table_name="user_home_garden_t" class_name="CRecordUserHomeGardenTable" cache_name="TUserHomeGardenTable"
+    div_num ="32" storage_instance = "LOGIC_RECORD_CACHE_INS"
+    file_name="logic_record_user_home_garden_table">
+
+	<field_info desc="uid"          type="int"  field_name="uid" primary_key="true" div ="true" comment="玩家uid" />	
+    <field_info desc="group_id"     type="int"  field_name="group_id" primary_key="true" comment="玩家区服" />
+	<field_info desc="home_id"     	type="int"  field_name="home_id" primary_key="true" comment="房间ID"/>
+	<field_info desc="land_id"     	type="int"  field_name="land_id" primary_key="true" comment="地块ID"/>
+    
+	<field_info desc="seed_id"   	type="int"  field_name="seed_id" default="0" comment="植物ID"/>
+	<field_info desc="seed_stat"   	type="int"  field_name="seed_stat" default="0" comment="植物状态"/>
+	<field_info desc="stat_time"   	type="int"  field_name="stat_time" default="0" comment="当前状态倒计时"/>
+</table_info>
